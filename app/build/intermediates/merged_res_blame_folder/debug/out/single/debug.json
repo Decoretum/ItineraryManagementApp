@@ -4,6 +4,10 @@
         "source": "com.example.itinerarymanagementapp-main-35:/drawable/ic_launcher_background.xml"
     },
     {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/xml_file_provider_path.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/xml/file_provider_path.xml"
+    },
+    {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.itinerarymanagementapp-main-35:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
@@ -58,6 +62,10 @@
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.itinerarymanagementapp-main-35:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_activity_capture_image.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/layout/activity_capture_image.xml"
     },
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-anydpi-v26_ic_launcher.xml.flat",

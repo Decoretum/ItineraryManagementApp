@@ -1,10 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-17:12
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-17:12
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-17:12
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-17:12
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
 MERGED from [Android-Image-Cropper-release.aar] /Users/Gamadan/.gradle/caches/transforms-3/3467b966172fab6b27196955c84ff030/transformed/Android-Image-Cropper-release/AndroidManifest.xml:2:1-9:12
+MERGED from [io.realm:realm-android-library:10.16.0] /Users/Gamadan/.gradle/caches/transforms-3/26c53afbd3533330a41c888c7dd45f19/transformed/realm-android-library-10.16.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.material:material:1.10.0] /Users/Gamadan/.gradle/caches/transforms-3/29487b7b575731628d833e95a4f3097c/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/Gamadan/.gradle/caches/transforms-3/895752b72fba505bdc6a707756d64eab/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -12,6 +13,8 @@ MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/Gamadan/.gradl
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/Gamadan/.gradle/caches/transforms-3/6c80ae39464c58c09a6ce8eeac754c22/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/Gamadan/.gradle/caches/transforms-3/e163e003f5ecd083da38f8f07a0c3661/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [com.squareup.picasso:picasso:2.71828] /Users/Gamadan/.gradle/caches/transforms-3/9222034121c03af41a9840b164c8a8d2/transformed/picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] /Users/Gamadan/.gradle/caches/transforms-3/57707ff0545966f3f6400259ffd5a891/transformed/relinker-1.4.3/AndroidManifest.xml:2:1-7:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/Gamadan/.gradle/caches/transforms-3/6bfc8fb715a797aae1de8d235ee41233/transformed/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/Gamadan/.gradle/caches/transforms-3/75907e244f702cde38acb8800f0666fb/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/Gamadan/.gradle/caches/transforms-3/0df68c3220126c0b0628193388e55405/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] /Users/Gamadan/.gradle/caches/transforms-3/7026d3f8af43bff2c9e4e69e6f99f4d1/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
@@ -61,8 +64,8 @@ MERGED from [com.android.support:exifinterface:27.1.0] /Users/Gamadan/.gradle/ca
 	xmlns:android
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-15:32
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-15:32
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-30:19
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-30:19
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/Gamadan/.gradle/caches/transforms-3/29487b7b575731628d833e95a4f3097c/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
@@ -107,12 +110,34 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/Gamadan/.gradle/cach
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:8:9-65
 	android:name
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:6:9-67
+provider#androidx.core.content.FileProvider
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:17:5-26:16
+	android:grantUriPermissions
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:21:9-43
+	android:authorities
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:19:9-52
+	android:exported
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:18:9-58
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:23:9-25:58
+	android:resource
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:25:13-55
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:24:13-63
+activity#com.example.itinerarymanagementapp.ImageActivity_
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:28:9-52
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:28:19-49
 uses-sdk
 INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml
 INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml
 MERGED from [Android-Image-Cropper-release.aar] /Users/Gamadan/.gradle/caches/transforms-3/3467b966172fab6b27196955c84ff030/transformed/Android-Image-Cropper-release/AndroidManifest.xml:5:5-7:41
 MERGED from [Android-Image-Cropper-release.aar] /Users/Gamadan/.gradle/caches/transforms-3/3467b966172fab6b27196955c84ff030/transformed/Android-Image-Cropper-release/AndroidManifest.xml:5:5-7:41
+MERGED from [io.realm:realm-android-library:10.16.0] /Users/Gamadan/.gradle/caches/transforms-3/26c53afbd3533330a41c888c7dd45f19/transformed/realm-android-library-10.16.0/AndroidManifest.xml:5:5-44
+MERGED from [io.realm:realm-android-library:10.16.0] /Users/Gamadan/.gradle/caches/transforms-3/26c53afbd3533330a41c888c7dd45f19/transformed/realm-android-library-10.16.0/AndroidManifest.xml:5:5-44
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:22:5-24:41
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:22:5-24:41
 MERGED from [com.google.android.material:material:1.10.0] /Users/Gamadan/.gradle/caches/transforms-3/29487b7b575731628d833e95a4f3097c/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
@@ -127,6 +152,10 @@ MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/Gamadan/.gradle/
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/Gamadan/.gradle/caches/transforms-3/e163e003f5ecd083da38f8f07a0c3661/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [com.squareup.picasso:picasso:2.71828] /Users/Gamadan/.gradle/caches/transforms-3/9222034121c03af41a9840b164c8a8d2/transformed/picasso-2.71828/AndroidManifest.xml:5:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] /Users/Gamadan/.gradle/caches/transforms-3/9222034121c03af41a9840b164c8a8d2/transformed/picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] /Users/Gamadan/.gradle/caches/transforms-3/57707ff0545966f3f6400259ffd5a891/transformed/relinker-1.4.3/AndroidManifest.xml:5:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] /Users/Gamadan/.gradle/caches/transforms-3/57707ff0545966f3f6400259ffd5a891/transformed/relinker-1.4.3/AndroidManifest.xml:5:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/Gamadan/.gradle/caches/transforms-3/6bfc8fb715a797aae1de8d235ee41233/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/Gamadan/.gradle/caches/transforms-3/6bfc8fb715a797aae1de8d235ee41233/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/Gamadan/.gradle/caches/transforms-3/75907e244f702cde38acb8800f0666fb/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/Gamadan/.gradle/caches/transforms-3/75907e244f702cde38acb8800f0666fb/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/Gamadan/.gradle/caches/transforms-3/0df68c3220126c0b0628193388e55405/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41

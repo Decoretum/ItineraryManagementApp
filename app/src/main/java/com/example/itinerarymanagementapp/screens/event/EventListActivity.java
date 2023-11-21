@@ -85,7 +85,7 @@ public class EventListActivity extends AppCompatActivity {
     }
 
     public void viewEvent(String eventUUID){
-        ViewEventActivity_.intent(this).start();
+        ViewEventActivity_.intent(this).uuid(eventUUID).start();
         finish();
     }
 

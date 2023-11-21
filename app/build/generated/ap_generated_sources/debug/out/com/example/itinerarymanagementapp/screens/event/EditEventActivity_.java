@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -27,6 +28,7 @@ public final class EditEventActivity_
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
+    public final static String UUID_EXTRA = "uuid";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public final class EditEventActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        injectExtras_();
     }
 
     @Override
@@ -84,6 +87,21 @@ public final class EditEventActivity_
         beans_.put(key, value);
     }
 
+    private void injectExtras_() {
+        Bundle extras_ = getIntent().getExtras();
+        if (extras_!= null) {
+            if (extras_.containsKey(UUID_EXTRA)) {
+                this.uuid = extras_.getString(UUID_EXTRA);
+            }
+        }
+    }
+
+    @Override
+    public void setIntent(Intent newIntent) {
+        super.setIntent(newIntent);
+        injectExtras_();
+    }
+
     public static class IntentBuilder_
         extends ActivityIntentBuilder<EditEventActivity_.IntentBuilder_>
     {
@@ -121,6 +139,16 @@ public final class EditEventActivity_
                 }
             }
             return new PostActivityStarter(context);
+        }
+
+        /**
+         * @param uuid
+         *     the value for this extra
+         * @return
+         *     the IntentBuilder to chain calls
+         */
+        public EditEventActivity_.IntentBuilder_ uuid(String uuid) {
+            return super.extra(UUID_EXTRA, uuid);
         }
     }
 }

@@ -7,9 +7,12 @@ import android.os.Bundle;
 import com.example.itinerarymanagementapp.R;
 
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 
 @EActivity
 public class EditEventActivity extends AppCompatActivity {
+    @Extra
+    String uuid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

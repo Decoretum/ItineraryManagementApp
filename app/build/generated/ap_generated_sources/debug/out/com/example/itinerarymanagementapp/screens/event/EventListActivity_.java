@@ -92,6 +92,8 @@ public final class EventListActivity_
         this.recyclerView = hasViews.internalFindViewById(R.id.recyclerView);
         this.newEventButton = hasViews.internalFindViewById(R.id.newEventButton);
         this.backButton = hasViews.internalFindViewById(R.id.backButton);
+        this.applyFilterButton = hasViews.internalFindViewById(R.id.applyFilterButton);
+        initialize();
     }
 
     public static class IntentBuilder_

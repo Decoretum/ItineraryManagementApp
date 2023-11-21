@@ -11,6 +11,7 @@ drawable box_drawing
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable rounded_button
+id applyFilterButton
 id backButton
 id cancel
 id capture
@@ -22,12 +23,19 @@ id deleteEventButton
 id eventName
 id filterCategory
 id imageView
+id imageView2
 id newEventButton
 id recyclerView
 id rotate
 id textView
 id timeRange
+id viewEventBackButton
 id viewEventButton
+id viewEventCategory
+id viewEventDescription
+id viewEventEditButton
+id viewEventName
+id viewEventTime
 layout activity_capture_image
 layout activity_create_event
 layout activity_edit_event

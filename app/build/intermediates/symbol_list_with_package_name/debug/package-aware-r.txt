@@ -2976,6 +2976,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable box_drawing
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3078,6 +3079,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_button
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3171,6 +3173,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backButton
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3190,6 +3193,7 @@ id cancel_button
 id capture
 id card_view
 id carryVelocity
+id category
 id center
 id centerCrop
 id centerInside
@@ -3237,6 +3241,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteEventButton
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3273,6 +3278,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id eventName
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3281,6 +3287,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filterCategory
 id fitCenter
 id fitEnd
 id fitStart
@@ -3313,6 +3320,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3403,6 +3411,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newEventButton
 id noScroll
 id noState
 id none
@@ -3454,6 +3463,7 @@ id radio
 id ratio
 id rectangle
 id rectangles
+id recyclerView
 id report_drawn
 id reverseSawtooth
 id right
@@ -3545,6 +3555,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3555,6 +3566,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeRange
 id title
 id titleDividerNoCustom
 id title_template
@@ -3576,6 +3588,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewEventButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3708,6 +3721,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_capture_image
+layout activity_create_event
+layout activity_edit_event
+layout activity_event_list
+layout activity_view_event
 layout crop_image_activity
 layout crop_image_view
 layout custom_dialog
@@ -3726,6 +3743,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout event_row_layout
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

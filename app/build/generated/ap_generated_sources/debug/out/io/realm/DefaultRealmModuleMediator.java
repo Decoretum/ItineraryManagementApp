@@ -26,15 +26,19 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
     private static final Set<Class<? extends RealmModel>> MODEL_CLASSES;
     static {
-        Set<Class<? extends RealmModel>> modelClasses = new HashSet<Class<? extends RealmModel>>(1);
+        Set<Class<? extends RealmModel>> modelClasses = new HashSet<Class<? extends RealmModel>>(3);
         modelClasses.add(com.example.itinerarymanagementapp.models.User.class);
+        modelClasses.add(com.example.itinerarymanagementapp.models.Trip.class);
+        modelClasses.add(com.example.itinerarymanagementapp.models.Event.class);
         MODEL_CLASSES = Collections.unmodifiableSet(modelClasses);
     }
 
     @Override
     public Map<Class<? extends RealmModel>, OsObjectSchemaInfo> getExpectedObjectSchemaInfoMap() {
-        Map<Class<? extends RealmModel>, OsObjectSchemaInfo> infoMap = new HashMap<Class<? extends RealmModel>, OsObjectSchemaInfo>(1);
+        Map<Class<? extends RealmModel>, OsObjectSchemaInfo> infoMap = new HashMap<Class<? extends RealmModel>, OsObjectSchemaInfo>(3);
         infoMap.put(com.example.itinerarymanagementapp.models.User.class, io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.getExpectedObjectSchemaInfo());
+        infoMap.put(com.example.itinerarymanagementapp.models.Trip.class, io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.getExpectedObjectSchemaInfo());
+        infoMap.put(com.example.itinerarymanagementapp.models.Event.class, io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.getExpectedObjectSchemaInfo());
         return infoMap;
     }
 
@@ -44,6 +48,12 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.createColumnInfo(schemaInfo);
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.createColumnInfo(schemaInfo);
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.createColumnInfo(schemaInfo);
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -55,6 +65,12 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return "User";
         }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return "Trip";
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return "Event";
+        }
         throw getMissingProxyClassException(clazz);
     }
 
@@ -65,12 +81,20 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (className.equals("User")) {
             return com.example.itinerarymanagementapp.models.User.class;
         }
+        if (className.equals("Trip")) {
+            return com.example.itinerarymanagementapp.models.Trip.class;
+        }
+        if (className.equals("Event")) {
+            return com.example.itinerarymanagementapp.models.Event.class;
+        }
         throw getMissingProxyClassException(className);
     }
 
     @Override
     public boolean hasPrimaryKeyImpl(Class<? extends RealmModel> clazz) {
-        return com.example.itinerarymanagementapp.models.User.class.isAssignableFrom(clazz);
+        return com.example.itinerarymanagementapp.models.User.class.isAssignableFrom(clazz)
+                || com.example.itinerarymanagementapp.models.Trip.class.isAssignableFrom(clazz)
+                || com.example.itinerarymanagementapp.models.Event.class.isAssignableFrom(clazz);
     }
 
     @Override
@@ -82,6 +106,12 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
                 return clazz.cast(new io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy());
+            }
+            if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+                return clazz.cast(new io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy());
+            }
+            if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+                return clazz.cast(new io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy());
             }
             throw getMissingProxyClassException(clazz);
         } finally {
@@ -104,6 +134,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             com_example_itinerarymanagementapp_models_UserRealmProxy.UserColumnInfo columnInfo = (com_example_itinerarymanagementapp_models_UserRealmProxy.UserColumnInfo) realm.getSchema().getColumnInfo(com.example.itinerarymanagementapp.models.User.class);
             return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.copyOrUpdate(realm, columnInfo, (com.example.itinerarymanagementapp.models.User) obj, update, cache, flags));
         }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            com_example_itinerarymanagementapp_models_TripRealmProxy.TripColumnInfo columnInfo = (com_example_itinerarymanagementapp_models_TripRealmProxy.TripColumnInfo) realm.getSchema().getColumnInfo(com.example.itinerarymanagementapp.models.Trip.class);
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.copyOrUpdate(realm, columnInfo, (com.example.itinerarymanagementapp.models.Trip) obj, update, cache, flags));
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            com_example_itinerarymanagementapp_models_EventRealmProxy.EventColumnInfo columnInfo = (com_example_itinerarymanagementapp_models_EventRealmProxy.EventColumnInfo) realm.getSchema().getColumnInfo(com.example.itinerarymanagementapp.models.Event.class);
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.copyOrUpdate(realm, columnInfo, (com.example.itinerarymanagementapp.models.Event) obj, update, cache, flags));
+        }
         throw getMissingProxyClassException(clazz);
     }
 
@@ -115,6 +153,10 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.insert(realm, (com.example.itinerarymanagementapp.models.User) object, cache);
+        } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.insert(realm, (com.example.itinerarymanagementapp.models.Trip) object, cache);
+        } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.insert(realm, (com.example.itinerarymanagementapp.models.Event) object, cache);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -134,12 +176,20 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
                 io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.insert(realm, (com.example.itinerarymanagementapp.models.User) object, cache);
+            } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+                io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.insert(realm, (com.example.itinerarymanagementapp.models.Trip) object, cache);
+            } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+                io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.insert(realm, (com.example.itinerarymanagementapp.models.Event) object, cache);
             } else {
                 throw getMissingProxyClassException(clazz);
             }
             if (iterator.hasNext()) {
                 if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
                     io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.insert(realm, iterator, cache);
+                } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+                    io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.insert(realm, iterator, cache);
+                } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+                    io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.insert(realm, iterator, cache);
                 } else {
                     throw getMissingProxyClassException(clazz);
                 }
@@ -155,6 +205,10 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.insertOrUpdate(realm, (com.example.itinerarymanagementapp.models.User) obj, cache);
+        } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.insertOrUpdate(realm, (com.example.itinerarymanagementapp.models.Trip) obj, cache);
+        } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.insertOrUpdate(realm, (com.example.itinerarymanagementapp.models.Event) obj, cache);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -174,12 +228,20 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
                 io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.insertOrUpdate(realm, (com.example.itinerarymanagementapp.models.User) object, cache);
+            } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+                io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.insertOrUpdate(realm, (com.example.itinerarymanagementapp.models.Trip) object, cache);
+            } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+                io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.insertOrUpdate(realm, (com.example.itinerarymanagementapp.models.Event) object, cache);
             } else {
                 throw getMissingProxyClassException(clazz);
             }
             if (iterator.hasNext()) {
                 if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
                     io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.insertOrUpdate(realm, iterator, cache);
+                } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+                    io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.insertOrUpdate(realm, iterator, cache);
+                } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+                    io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else {
                     throw getMissingProxyClassException(clazz);
                 }
@@ -195,6 +257,12 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        }
         throw getMissingProxyClassException(clazz);
     }
 
@@ -205,6 +273,12 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.createUsingJsonStream(realm, reader));
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.createUsingJsonStream(realm, reader));
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.createUsingJsonStream(realm, reader));
         }
         throw getMissingProxyClassException(clazz);
     }
@@ -218,12 +292,24 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_UserRealmProxy.createDetachedCopy((com.example.itinerarymanagementapp.models.User) realmObject, 0, maxDepth, cache));
         }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_TripRealmProxy.createDetachedCopy((com.example.itinerarymanagementapp.models.Trip) realmObject, 0, maxDepth, cache));
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            return clazz.cast(io.realm.com_example_itinerarymanagementapp_models_EventRealmProxy.createDetachedCopy((com.example.itinerarymanagementapp.models.Event) realmObject, 0, maxDepth, cache));
+        }
         throw getMissingProxyClassException(clazz);
     }
 
     @Override
     public <E extends RealmModel> boolean isEmbedded(Class<E> clazz) {
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
+            return false;
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            return false;
+        }
+        if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
             return false;
         }
         throw getMissingProxyClassException(clazz);
@@ -237,6 +323,10 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.itinerarymanagementapp.models.User.class)) {
             throw getNotEmbeddedClassException("com.example.itinerarymanagementapp.models.User");
+        } else if (clazz.equals(com.example.itinerarymanagementapp.models.Trip.class)) {
+            throw getNotEmbeddedClassException("com.example.itinerarymanagementapp.models.Trip");
+        } else if (clazz.equals(com.example.itinerarymanagementapp.models.Event.class)) {
+            throw getNotEmbeddedClassException("com.example.itinerarymanagementapp.models.Event");
         } else {
             throw getMissingProxyClassException(clazz);
         }

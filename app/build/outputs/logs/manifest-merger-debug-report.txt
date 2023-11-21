@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-42:12
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-42:12
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-42:12
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:1-42:12
 MERGED from [Android-Image-Cropper-release.aar] /Users/Gamadan/.gradle/caches/transforms-3/3467b966172fab6b27196955c84ff030/transformed/Android-Image-Cropper-release/AndroidManifest.xml:2:1-9:12
 MERGED from [io.realm:realm-android-library:10.16.0] /Users/Gamadan/.gradle/caches/transforms-3/26c53afbd3533330a41c888c7dd45f19/transformed/realm-android-library-10.16.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:17:1-32:12
@@ -64,8 +64,8 @@ MERGED from [com.android.support:exifinterface:27.1.0] /Users/Gamadan/.gradle/ca
 	xmlns:android
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-30:19
-INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-30:19
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-40:19
+INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:5:5-40:19
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.1] /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/Gamadan/.gradle/caches/transforms-3/29487b7b575731628d833e95a4f3097c/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
@@ -109,27 +109,51 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/Gamadan/.gradle/cach
 	android:dataExtractionRules
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:8:9-65
 	android:name
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:6:9-67
-provider#androidx.core.content.FileProvider
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:17:5-26:16
-	android:grantUriPermissions
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:21:9-43
-	android:authorities
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:19:9-52
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:6:9-33
+activity#com.example.itinerarymanagementapp.screens.event.EditEventActivity_
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:16:9-18:40
 	android:exported
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:20:9-33
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:18:13-37
 	android:name
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:18:9-58
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:17:13-61
+activity#com.example.itinerarymanagementapp.screens.event.ViewEventActivity_
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:20:13-61
+activity#com.example.itinerarymanagementapp.screens.event.CreateEventActivity_
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:23:13-63
+activity#com.example.itinerarymanagementapp.screens.event.EventListActivity_
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:26:13-61
+provider#androidx.core.content.FileProvider
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:29:9-37:20
+	android:grantUriPermissions
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:33:13-47
+	android:authorities
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:31:13-56
+	android:exported
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:30:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:23:9-25:58
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:34:13-36:62
 	android:resource
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:25:13-55
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:36:17-59
 	android:name
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:24:13-63
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:35:17-67
 activity#com.example.itinerarymanagementapp.ImageActivity_
-ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:28:9-52
+ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:39:9-52
 	android:name
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:28:19-49
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:39:19-49
 uses-sdk
 INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml

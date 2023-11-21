@@ -1,4 +1,4 @@
-package com.example.itinerarymanagementapp.screens;
+package com.example.itinerarymanagementapp.screens.event;
 
 import androidx.appcompat.app.AppCompatActivity;
 

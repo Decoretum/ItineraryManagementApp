@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.itinerarymanagementapp.R;
 
@@ -38,6 +39,9 @@ public class EventListActivity extends AppCompatActivity {
     @ViewById
     Button applyFilterButton;
 
+    @ViewById
+    EditText filterCategory;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,17 @@ public class EventListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 CreateEventActivity_.intent(EventListActivity.this).start();
                 finish();
+            }
+        });
+
+        applyFilterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                realm = Realm.getDefaultInstance();
+                String queriedCategory = filterCategory.getText().toString();
+                RealmResults<Event> queriedEvents = realm.where(Event.class).contains("category", queriedCategory).findAll();
+                EventAdapter eventAdapter = new EventAdapter(EventListActivity.this, queriedEvents, true);
+                recyclerView.setAdapter(eventAdapter);
             }
         });
     }

@@ -15,15 +15,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class CreateEventActivity_
     extends CreateEventActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +44,7 @@ public final class CreateEventActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +85,19 @@ public final class CreateEventActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.imageView4 = hasViews.internalFindViewById(R.id.imageView4);
+        this.editTripName = hasViews.internalFindViewById(R.id.editTripName);
+        this.editTripCategory = hasViews.internalFindViewById(R.id.editTripCategory);
+        this.editTripDescription = hasViews.internalFindViewById(R.id.editTripDescription);
+        this.editTripTime = hasViews.internalFindViewById(R.id.editTripTime);
+        this.createTrip = hasViews.internalFindViewById(R.id.createTrip);
+        this.cancelTrip = hasViews.internalFindViewById(R.id.cancelTrip);
+        this.imageButton = hasViews.internalFindViewById(R.id.imageButton);
+        checkPermissions();
     }
 
     public static class IntentBuilder_

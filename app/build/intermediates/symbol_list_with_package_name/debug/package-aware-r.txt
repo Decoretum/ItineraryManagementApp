@@ -3190,6 +3190,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel
+id cancelTrip
 id cancel_button
 id capture
 id card_view
@@ -3225,6 +3226,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id createTrip
 id crop
 id cropImageView
 id crop_image_menu_crop
@@ -3272,6 +3274,10 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTripCategory
+id editTripDescription
+id editTripName
+id editTripTime
 id edit_query
 id elastic
 id embed
@@ -3321,8 +3327,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButton
 id imageView
 id imageView2
+id imageView4
 id immediateStop
 id included
 id indeterminate
@@ -3558,6 +3566,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

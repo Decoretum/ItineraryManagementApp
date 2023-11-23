@@ -93,6 +93,7 @@ public final class EventListActivity_
         this.newEventButton = hasViews.internalFindViewById(R.id.newEventButton);
         this.backButton = hasViews.internalFindViewById(R.id.backButton);
         this.applyFilterButton = hasViews.internalFindViewById(R.id.applyFilterButton);
+        this.filterCategory = hasViews.internalFindViewById(R.id.filterCategory);
         initialize();
     }
 

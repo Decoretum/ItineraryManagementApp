@@ -26,16 +26,16 @@
             android:name=".screens.trip.TripListActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.EditEventActivity"
+            android:name=".screens.event.EditEventActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.ViewEventActivity"
+            android:name=".screens.event.ViewEventActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.CreateEventActivity"
+            android:name=".screens.event.CreateEventActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.EventListActivity"
+            android:name=".screens.event.EventListActivity"
             android:exported="false" />
 
         <provider

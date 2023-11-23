@@ -3403,6 +3403,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id next
 id noScroll
 id noState
 id none
@@ -3545,6 +3546,9 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3708,6 +3712,12 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_capture_image
+layout activity_create_event
+layout activity_edit_event
+layout activity_event_list
+layout activity_login
+layout activity_main
+layout activity_view_event
 layout crop_image_activity
 layout crop_image_view
 layout custom_dialog

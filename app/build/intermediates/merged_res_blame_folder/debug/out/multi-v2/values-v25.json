@@ -4,7 +4,7 @@
             "outputFile": "com.example.itinerarymanagementapp-mergeDebugResources-31:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "/Users/Gamadan/.gradle/caches/transforms-3/6c80ae39464c58c09a6ce8eeac754c22/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
+                    "source": "C:\\Users\\pc2\\.gradle\\caches\\transforms-3\\6c80ae39464c58c09a6ce8eeac754c22\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

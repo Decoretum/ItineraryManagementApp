@@ -4,7 +4,7 @@
             "outputFile": "com.example.itinerarymanagementapp-mergeDebugResources-31:/values-ru-rRU/values-ru-rRU.xml",
             "map": [
                 {
-                    "source": "/Users/Gamadan/.gradle/caches/transforms-3/3467b966172fab6b27196955c84ff030/transformed/Android-Image-Cropper-release/res/values-ru-rRU/values-ru-rRU.xml",
+                    "source": "C:\\Users\\pc2\\.gradle\\caches\\transforms-3\\3467b966172fab6b27196955c84ff030\\transformed\\Android-Image-Cropper-release\\res\\values-ru-rRU\\values-ru-rRU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

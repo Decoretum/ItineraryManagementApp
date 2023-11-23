@@ -14,6 +14,24 @@
         android:theme="@style/Theme.ItineraryManagementApp"
         tools:targetApi="31">
         <activity
+            android:name=".screens.user.EditUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.user.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.user.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.MainActivity_"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".screens.event.EditEventActivity"
             android:exported="false" />
         <activity

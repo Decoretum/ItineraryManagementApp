@@ -14,28 +14,28 @@
         android:theme="@style/Theme.ItineraryManagementApp"
         tools:targetApi="31">
         <activity
-            android:name=".screens.trip.ViewTripActivity"
+            android:name=".screens.trip.ViewTripActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.trip.EditTripActivity"
+            android:name=".screens.trip.EditTripActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.trip.CreateTripActivity"
+            android:name=".screens.trip.CreateTripActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.trip.TripListActivity"
+            android:name=".screens.trip.TripListActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.EditEventActivity"
+            android:name=".screens.event.EditEventActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.ViewEventActivity"
+            android:name=".screens.event.ViewEventActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.CreateEventActivity"
+            android:name=".screens.event.CreateEventActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.EventListActivity"
+            android:name=".screens.event.EventListActivity_"
             android:exported="false" />
 
         <provider

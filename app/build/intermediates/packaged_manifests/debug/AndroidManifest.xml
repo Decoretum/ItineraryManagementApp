@@ -27,6 +27,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ItineraryManagementApp" >
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.ViewTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.EditTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.CreateTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.TripListActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.EditEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.ViewEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.CreateEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.EventListActivity_"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="@string/fileAuthority"

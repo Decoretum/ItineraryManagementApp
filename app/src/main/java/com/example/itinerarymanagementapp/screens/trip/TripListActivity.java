@@ -6,7 +6,11 @@ import android.os.Bundle;
 
 import com.example.itinerarymanagementapp.R;
 
+import org.androidannotations.annotations.EActivity;
+
+@EActivity
 public class TripListActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

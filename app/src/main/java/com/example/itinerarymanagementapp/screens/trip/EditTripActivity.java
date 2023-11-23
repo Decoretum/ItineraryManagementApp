@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 import com.example.itinerarymanagementapp.R;
 
+import org.androidannotations.annotations.EActivity;
+
+@EActivity
 public class EditTripActivity extends AppCompatActivity {
 
     @Override

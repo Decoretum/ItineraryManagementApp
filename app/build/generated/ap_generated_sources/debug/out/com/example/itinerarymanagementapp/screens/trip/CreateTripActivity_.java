@@ -13,17 +13,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class CreateTripActivity_
     extends CreateTripActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +45,7 @@ public final class CreateTripActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +86,30 @@ public final class CreateTripActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.createTripTitle = hasViews.internalFindViewById(R.id.createTripTitle);
+        this.tripNameRegisterTitle = hasViews.internalFindViewById(R.id.tripNameRegisterTitle);
+        this.tripNameRegisterInput = hasViews.internalFindViewById(R.id.tripNameRegisterInput);
+        this.tripCategoryRegisterTitle = hasViews.internalFindViewById(R.id.tripCategoryRegisterTitle);
+        this.tripCategoryRegisterInput = hasViews.internalFindViewById(R.id.tripCategoryRegisterInput);
+        this.tripDescriptionRegisterTitle = hasViews.internalFindViewById(R.id.tripDescriptionRegisterTitle);
+        this.tripDescriptionRegisterInput = hasViews.internalFindViewById(R.id.tripDescriptionRegisterInput);
+        this.tripSaveBtn = hasViews.internalFindViewById(R.id.tripSaveBtn);
+        this.tripRegisterCancelBtn = hasViews.internalFindViewById(R.id.tripRegisterCancelBtn);
+        if (this.tripSaveBtn!= null) {
+            this.tripSaveBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    CreateTripActivity_.this.tripSaveBtn();
+                }
+            }
+            );
+        }
+        init();
     }
 
     public static class IntentBuilder_

@@ -13,17 +13,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class TripListActivity_
     extends TripListActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +45,7 @@ public final class TripListActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +86,25 @@ public final class TripListActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.tripTitle = hasViews.internalFindViewById(R.id.tripTitle);
+        this.tripRecyclerView = hasViews.internalFindViewById(R.id.tripRecyclerView);
+        this.categoryFilterInput = hasViews.internalFindViewById(R.id.categoryFilterInput);
+        this.addTripBtn = hasViews.internalFindViewById(R.id.addTripBtn);
+        this.tripListBackBtn = hasViews.internalFindViewById(R.id.tripListBackBtn);
+        if (this.addTripBtn!= null) {
+            this.addTripBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    TripListActivity_.this.addTripBtn();
+                }
+            }
+            );
+        }
     }
 
     public static class IntentBuilder_

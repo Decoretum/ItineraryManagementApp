@@ -13,17 +13,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class ViewTripActivity_
     extends ViewTripActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +45,7 @@ public final class ViewTripActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +86,48 @@ public final class ViewTripActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.viewTripTitle = hasViews.internalFindViewById(R.id.viewTripTitle);
+        this.viewTripCategory = hasViews.internalFindViewById(R.id.viewTripCategory);
+        this.tripDescriptionTitle = hasViews.internalFindViewById(R.id.tripDescriptionTitle);
+        this.tripDescriptionField = hasViews.internalFindViewById(R.id.tripDescriptionField);
+        this.checkTripEventsBtn = hasViews.internalFindViewById(R.id.checkTripEventsBtn);
+        this.editTripBtn = hasViews.internalFindViewById(R.id.editTripBtn);
+        this.backBtn = hasViews.internalFindViewById(R.id.backBtn);
+        if (this.checkTripEventsBtn!= null) {
+            this.checkTripEventsBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    ViewTripActivity_.this.checkTripEventsBtn();
+                }
+            }
+            );
+        }
+        if (this.editTripBtn!= null) {
+            this.editTripBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    ViewTripActivity_.this.editTripBtn();
+                }
+            }
+            );
+        }
+        if (this.backBtn!= null) {
+            this.backBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    ViewTripActivity_.this.backBtn();
+                }
+            }
+            );
+        }
+        init();
     }
 
     public static class IntentBuilder_

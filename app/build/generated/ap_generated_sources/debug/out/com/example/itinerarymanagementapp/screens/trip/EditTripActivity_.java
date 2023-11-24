@@ -13,17 +13,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class EditTripActivity_
     extends EditTripActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +45,7 @@ public final class EditTripActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +86,40 @@ public final class EditTripActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.editTripTitle = hasViews.internalFindViewById(R.id.editTripTitle);
+        this.editTripNameTitle = hasViews.internalFindViewById(R.id.editTripNameTitle);
+        this.editTripNameInput = hasViews.internalFindViewById(R.id.editTripNameInput);
+        this.editTripCategoryTitle = hasViews.internalFindViewById(R.id.editTripCategoryTitle);
+        this.editTripCategoryInput = hasViews.internalFindViewById(R.id.editTripCategoryInput);
+        this.editTripDescriptionTitle = hasViews.internalFindViewById(R.id.editTripDescriptionTitle);
+        this.editTripDescriptionInput = hasViews.internalFindViewById(R.id.editTripDescriptionInput);
+        this.saveTripEditBtn = hasViews.internalFindViewById(R.id.saveTripEditBtn);
+        this.cancelTripEditBtn = hasViews.internalFindViewById(R.id.cancelTripEditBtn);
+        if (this.saveTripEditBtn!= null) {
+            this.saveTripEditBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    EditTripActivity_.this.saveTripEditBtn();
+                }
+            }
+            );
+        }
+        if (this.cancelTripEditBtn!= null) {
+            this.cancelTripEditBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    EditTripActivity_.this.cancelTripEditBtn();
+                }
+            }
+            );
+        }
+        init();
     }
 
     public static class IntentBuilder_

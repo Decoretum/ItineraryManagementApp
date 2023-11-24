@@ -9,7 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Trip;
+
+import org.w3c.dom.Text;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
@@ -17,9 +20,21 @@ import io.realm.RealmRecyclerViewAdapter;
 public class TripAdapter extends RealmRecyclerViewAdapter<Trip, TripAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         // Instantiate Trip row UI components
+        TextView rowTripName;
+
+        TextView rowTripCategory;
+
+        ImageButton viewTripBtn;
+
+        ImageButton deleteTripBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Find Trip row UI by ID
+            rowTripName = itemView.findViewById(R.id.rowTripName);
+            rowTripCategory = itemView.findViewById(R.id.rowTripCategory);
+            viewTripBtn = itemView.findViewById(R.id.viewTripBtn);
+            deleteTripBtn = itemView.findViewById(R.id.deleteTripBtn);
+
         }
     }
 
@@ -40,29 +55,29 @@ public class TripAdapter extends RealmRecyclerViewAdapter<Trip, TripAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        User u = getItem(position);
-//
-//
-//        holder.rowUserName.setText(u.getName());
-//        holder.userPassword.setText(u.getPassword());
-//
-//
-//        holder.editUserBtn.setTag(u);
-//        holder.editUserBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                adminScreen.editUser((User) view.getTag());
-//            }
-//        });
-//
-//
-//        holder.deleteUserBtn.setTag(u);
-//        holder.deleteUserBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                adminScreen.delete((User) view.getTag());
-//            }
-//        });
+        Trip t = getItem(position);
+
+
+        holder.rowTripName.setText(t.getTripName());
+        holder.rowTripCategory.setText(t.getCategory());
+
+
+        holder.viewTripBtn.setTag(t);
+        holder.viewTripBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tripListActivity.viewTrip((Trip) view.getTag());
+            }
+        });
+
+
+        holder.deleteTripBtn.setTag(t);
+        holder.deleteTripBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                tripListActivity.delete((Trip) view.getTag());
+            }
+        });
     }
 }

@@ -45,10 +45,10 @@ public class AdminActivity extends AppCompatActivity {
     public void edit(User user)
     {
         // store the user's uuid for next screen's use
-        SharedPreferences prefs = getSharedPreferences("", MODE_PRIVATE);
-        SharedPreferences.Editor edit = prefs.edit();
+        SharedPreferences uprefs = getSharedPreferences("uprefs", MODE_PRIVATE);
+        SharedPreferences.Editor edit = uprefs.edit();
 
-        edit.putString("userUuid", user.getUuid());
+        edit.putString("userEditUuid", user.getUuid());
         edit.apply();
 
         // go to Edit screen

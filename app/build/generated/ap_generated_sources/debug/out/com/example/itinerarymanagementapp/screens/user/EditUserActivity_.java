@@ -90,8 +90,25 @@ public final class EditUserActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        this.firstName = hasViews.internalFindViewById(R.id.firstName);
+        this.lastName = hasViews.internalFindViewById(R.id.lastName);
+        this.birthday = hasViews.internalFindViewById(R.id.birthday);
+        this.username = hasViews.internalFindViewById(R.id.username);
+        this.password = hasViews.internalFindViewById(R.id.password);
+        this.confirmPassword = hasViews.internalFindViewById(R.id.confirmPassword);
+        View view_saveUserEdit = hasViews.internalFindViewById(R.id.saveUserEdit);
         View view_cancelUserEdit = hasViews.internalFindViewById(R.id.cancelUserEdit);
 
+        if (view_saveUserEdit!= null) {
+            view_saveUserEdit.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    EditUserActivity_.this.saveUserEdit();
+                }
+            }
+            );
+        }
         if (view_cancelUserEdit!= null) {
             view_cancelUserEdit.setOnClickListener(new OnClickListener() {
 
@@ -102,6 +119,7 @@ public final class EditUserActivity_
             }
             );
         }
+        init();
     }
 
     public static class IntentBuilder_

@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cance"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screens.user.EditUserActivity">
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/birthday"
         android:layout_width="283dp"
         android:layout_height="41dp"
         android:ems="10"
@@ -21,19 +22,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Birthday (MM/DD/YY)"
-        app:layout_constraintStart_toStartOf="@+id/editTextText4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintStart_toStartOf="@+id/firstName"
+        app:layout_constraintTop_toBottomOf="@+id/firstName" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm Password"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <EditText
-        android:id="@+id/editTextTextPassword5"
+        android:id="@+id/confirmPassword"
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -43,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/lastName"
         android:layout_width="136dp"
         android:layout_height="45dp"
         android:layout_marginEnd="64dp"
@@ -59,11 +60,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="First Name"
-        app:layout_constraintStart_toStartOf="@+id/editTextText4"
+        app:layout_constraintStart_toStartOf="@+id/firstName"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/username"
         android:layout_width="283dp"
         android:layout_height="41dp"
         android:ems="10"
@@ -72,33 +73,22 @@
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Save"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword5"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword5" />
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        app:layout_constraintStart_toStartOf="@+id/editTextText3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/firstName"
         android:layout_width="136dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="First Name"
         android:inputType="text"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText5"
+        app:layout_constraintEnd_toStartOf="@+id/lastName"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -108,11 +98,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Name"
-        app:layout_constraintStart_toStartOf="@+id/editTextText5"
+        app:layout_constraintStart_toStartOf="@+id/lastName"
         app:layout_constraintTop_toTopOf="@+id/textView12" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/password"
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -127,19 +117,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Username"
-        app:layout_constraintStart_toStartOf="@+id/editTextText6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Cancel"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="@+id/birthday"
+        app:layout_constraintTop_toBottomOf="@+id/birthday" />
 
     <TextView
         android:id="@+id/textView3"
@@ -152,5 +131,26 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveUserEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@+id/confirmPassword"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/confirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
+
+    <Button
+        android:id="@+id/cancelUserEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="@+id/saveUserEdit"
+        app:layout_constraintStart_toStartOf="@+id/saveUserEdit"
+        app:layout_constraintTop_toBottomOf="@+id/saveUserEdit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

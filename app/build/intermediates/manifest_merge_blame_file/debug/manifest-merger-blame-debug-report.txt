@@ -41,175 +41,176 @@
 27-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:12:9-54
 28        android:supportsRtl="true"
 28-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:13:9-35
-29        android:theme="@style/Theme.ItineraryManagementApp" >
-29-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:14:9-60
-30        <activity
-30-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:16:9-18:40
-31            android:name="com.example.itinerarymanagementapp.screens.user.AdminActivity_"
-31-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:17:13-56
-32            android:exported="false" />
-32-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:18:13-37
-33        <activity
-33-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:19:9-21:40
-34            android:name="com.example.itinerarymanagementapp.screens.user.EditUserActivity_"
-34-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:20:13-59
-35            android:exported="false" />
-35-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:21:13-37
-36        <activity
-36-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:22:9-24:40
-37            android:name="com.example.itinerarymanagementapp.screens.user.RegisterActivity_"
-37-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:23:13-59
-38            android:exported="false" />
-38-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:24:13-37
-39        <activity
-39-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:25:9-27:40
-40            android:name="com.example.itinerarymanagementapp.screens.user.LoginActivity_"
-40-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:26:13-56
-41            android:exported="false" />
-41-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:27:13-37
-42        <activity
-42-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:28:9-36:20
-43            android:name="com.example.itinerarymanagementapp.screens.MainActivity_"
-43-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:29:13-50
-44            android:exported="true" >
-44-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:30:13-36
-45            <intent-filter>
-45-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:31:13-35:29
-46                <action android:name="android.intent.action.MAIN" />
-46-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:17-69
-46-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:25-66
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-48-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:17-77
-48-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:27-74
-49            </intent-filter>
-50        </activity>
-51        <activity
-51-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:37:9-39:40
-52            android:name="com.example.itinerarymanagementapp.screens.event.EditEventActivity"
-52-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:38:13-60
-53            android:exported="false" />
-53-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:39:13-37
-54        <activity
-54-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:40:9-42:40
-55            android:name="com.example.itinerarymanagementapp.screens.event.ViewEventActivity"
-55-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:41:13-60
-56            android:exported="false" />
-56-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:42:13-37
-57        <activity
-57-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:43:9-45:40
-58            android:name="com.example.itinerarymanagementapp.screens.event.CreateEventActivity"
-58-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:44:13-62
-59            android:exported="false" />
-59-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:45:13-37
-60        <activity
-60-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:46:9-48:40
-61            android:name="com.example.itinerarymanagementapp.screens.event.EventListActivity"
-61-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:47:13-60
-62            android:exported="false" />
-62-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:48:13-37
-63
-64        <provider
-64-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:50:9-58:20
-65            android:name="androidx.core.content.FileProvider"
-65-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:51:13-62
-66            android:authorities="@string/fileAuthority"
-66-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:52:13-56
-67            android:exported="false"
-67-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:53:13-37
-68            android:grantUriPermissions="true" >
-68-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:54:13-47
-69            <meta-data
-69-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:55:13-57:62
-70                android:name="android.support.FILE_PROVIDER_PATHS"
-70-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:56:17-67
-71                android:resource="@xml/file_provider_path" />
-71-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:57:17-59
-72        </provider>
-73
-74        <activity android:name="com.example.itinerarymanagementapp.ImageActivity_" />
-74-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:60:9-52
-74-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:60:19-49
-75        <activity
-75-->[com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:27:9-29:72
-76            android:name="com.karumi.dexter.DexterActivity"
-76-->[com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:28:13-60
-77            android:theme="@style/Dexter.Internal.Theme.Transparent" />
-77-->[com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:29:13-69
-78
-79        <provider
-79-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
-80            android:name="com.squareup.picasso.PicassoProvider"
-80-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
-81            android:authorities="com.example.itinerarymanagementapp.com.squareup.picasso"
-81-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
-82            android:exported="false" />
-82-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
-83        <provider
-83-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-84            android:name="androidx.startup.InitializationProvider"
-84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-85            android:authorities="com.example.itinerarymanagementapp.androidx-startup"
-85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-86            android:exported="false" >
-86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-87            <meta-data
-87-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-88-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-89                android:value="androidx.startup" />
-89-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-90            <meta-data
-90-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\pc2\.gradle\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
-91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-91-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\pc2\.gradle\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
-92                android:value="androidx.startup" />
-92-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\pc2\.gradle\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
-93            <meta-data
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-94                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-95                android:value="androidx.startup" />
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-96        </provider>
-97
-98        <receiver
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-99            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-100            android:directBootAware="false"
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-101            android:enabled="true"
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-102            android:exported="true"
-102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-103            android:permission="android.permission.DUMP" >
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-104            <intent-filter>
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-105                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-106            </intent-filter>
-107            <intent-filter>
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-108                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-109            </intent-filter>
-110            <intent-filter>
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-111                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-112            </intent-filter>
-113            <intent-filter>
-113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-114                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-115            </intent-filter>
-116        </receiver>
-117    </application>
-118
-119</manifest>
+29        android:testOnly="true"
+30        android:theme="@style/Theme.ItineraryManagementApp" >
+30-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:14:9-60
+31        <activity
+31-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:16:9-18:40
+32            android:name="com.example.itinerarymanagementapp.screens.user.AdminActivity_"
+32-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:17:13-56
+33            android:exported="false" />
+33-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:18:13-37
+34        <activity
+34-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:19:9-21:40
+35            android:name="com.example.itinerarymanagementapp.screens.user.EditUserActivity_"
+35-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:20:13-59
+36            android:exported="false" />
+36-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:21:13-37
+37        <activity
+37-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:22:9-24:40
+38            android:name="com.example.itinerarymanagementapp.screens.user.RegisterActivity_"
+38-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:23:13-59
+39            android:exported="false" />
+39-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:24:13-37
+40        <activity
+40-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:25:9-27:40
+41            android:name="com.example.itinerarymanagementapp.screens.user.LoginActivity_"
+41-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:26:13-56
+42            android:exported="false" />
+42-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:27:13-37
+43        <activity
+43-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:28:9-36:20
+44            android:name="com.example.itinerarymanagementapp.screens.MainActivity_"
+44-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:29:13-50
+45            android:exported="true" >
+45-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:30:13-36
+46            <intent-filter>
+46-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:31:13-35:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:17-69
+47-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:17-77
+49-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:37:9-39:40
+53            android:name="com.example.itinerarymanagementapp.screens.event.EditEventActivity"
+53-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:38:13-60
+54            android:exported="false" />
+54-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:39:13-37
+55        <activity
+55-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:40:9-42:40
+56            android:name="com.example.itinerarymanagementapp.screens.event.ViewEventActivity"
+56-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:41:13-60
+57            android:exported="false" />
+57-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:42:13-37
+58        <activity
+58-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:43:9-45:40
+59            android:name="com.example.itinerarymanagementapp.screens.event.CreateEventActivity"
+59-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:44:13-62
+60            android:exported="false" />
+60-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:45:13-37
+61        <activity
+61-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:46:9-48:40
+62            android:name="com.example.itinerarymanagementapp.screens.event.EventListActivity"
+62-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:47:13-60
+63            android:exported="false" />
+63-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:48:13-37
+64
+65        <provider
+65-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:50:9-58:20
+66            android:name="androidx.core.content.FileProvider"
+66-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:51:13-62
+67            android:authorities="@string/fileAuthority"
+67-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:52:13-56
+68            android:exported="false"
+68-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:53:13-37
+69            android:grantUriPermissions="true" >
+69-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:54:13-47
+70            <meta-data
+70-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:55:13-57:62
+71                android:name="android.support.FILE_PROVIDER_PATHS"
+71-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:56:17-67
+72                android:resource="@xml/file_provider_path" />
+72-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:57:17-59
+73        </provider>
+74
+75        <activity android:name="com.example.itinerarymanagementapp.ImageActivity_" />
+75-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:60:9-52
+75-->C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:60:19-49
+76        <activity
+76-->[com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:27:9-29:72
+77            android:name="com.karumi.dexter.DexterActivity"
+77-->[com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:28:13-60
+78            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+78-->[com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:29:13-69
+79
+80        <provider
+80-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+81            android:name="com.squareup.picasso.PicassoProvider"
+81-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
+82            android:authorities="com.example.itinerarymanagementapp.com.squareup.picasso"
+82-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+83            android:exported="false" />
+83-->[com.squareup.picasso:picasso:2.71828] C:\Users\pc2\.gradle\caches\transforms-3\9222034121c03af41a9840b164c8a8d2\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+84        <provider
+84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+85            android:name="androidx.startup.InitializationProvider"
+85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+86            android:authorities="com.example.itinerarymanagementapp.androidx-startup"
+86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+87            android:exported="false" >
+87-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+88            <meta-data
+88-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+89                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+89-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+90                android:value="androidx.startup" />
+90-->[androidx.emoji2:emoji2:1.2.0] C:\Users\pc2\.gradle\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+91            <meta-data
+91-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\pc2\.gradle\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+92-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\pc2\.gradle\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+93                android:value="androidx.startup" />
+93-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\pc2\.gradle\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+94            <meta-data
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+96                android:value="androidx.startup" />
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+97        </provider>
+98
+99        <receiver
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+100            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+101            android:directBootAware="false"
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+102            android:enabled="true"
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+103            android:exported="true"
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+104            android:permission="android.permission.DUMP" >
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+105            <intent-filter>
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+106                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+107            </intent-filter>
+108            <intent-filter>
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+109                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+110            </intent-filter>
+111            <intent-filter>
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+112                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+113            </intent-filter>
+114            <intent-filter>
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+115                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\pc2\.gradle\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+116            </intent-filter>
+117        </receiver>
+118    </application>
+119
+120</manifest>

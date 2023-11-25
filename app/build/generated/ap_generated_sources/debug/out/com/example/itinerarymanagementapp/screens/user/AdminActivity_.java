@@ -90,18 +90,31 @@ public final class AdminActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        View view_add = hasViews.internalFindViewById(R.id.add);
+        this.userRecycler = hasViews.internalFindViewById(R.id.userRecycler);
+        View view_register = hasViews.internalFindViewById(R.id.register);
+        View view_clearUserRealm = hasViews.internalFindViewById(R.id.clearUserRealm);
 
-        if (view_add!= null) {
-            view_add.setOnClickListener(new OnClickListener() {
+        if (view_register!= null) {
+            view_register.setOnClickListener(new OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    AdminActivity_.this.add();
+                    AdminActivity_.this.register();
                 }
             }
             );
         }
+        if (view_clearUserRealm!= null) {
+            view_clearUserRealm.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    AdminActivity_.this.clearUserRealm();
+                }
+            }
+            );
+        }
+        init();
     }
 
     public static class IntentBuilder_

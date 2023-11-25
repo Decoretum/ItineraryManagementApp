@@ -90,8 +90,23 @@ public final class LoginActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        this.loginUsername = hasViews.internalFindViewById(R.id.loginUsername);
+        this.loginPassword = hasViews.internalFindViewById(R.id.loginPassword);
+        this.rememberMe = hasViews.internalFindViewById(R.id.rememberMe);
+        View view_signIn = hasViews.internalFindViewById(R.id.signIn);
         View view_admin = hasViews.internalFindViewById(R.id.admin);
+        View view_clearUserPrefs = hasViews.internalFindViewById(R.id.clearUserPrefs);
 
+        if (view_signIn!= null) {
+            view_signIn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    LoginActivity_.this.signIn();
+                }
+            }
+            );
+        }
         if (view_admin!= null) {
             view_admin.setOnClickListener(new OnClickListener() {
 
@@ -102,6 +117,17 @@ public final class LoginActivity_
             }
             );
         }
+        if (view_clearUserPrefs!= null) {
+            view_clearUserPrefs.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    LoginActivity_.this.clearUserPrefs();
+                }
+            }
+            );
+        }
+        init();
     }
 
     public static class IntentBuilder_

@@ -3184,7 +3184,6 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button2
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3204,12 +3203,12 @@ id center_vertical
 id chain
 id chain2
 id chains
-id checkBox
 id checkbox
 id checked
 id chronometer
 id circle_center
 id clearUser
+id clearUserPrefs
 id clearUserRealm
 id clear_text
 id clip_horizontal
@@ -3277,8 +3276,6 @@ id easeInOut
 id easeOut
 id east
 id edge
-id editTextText
-id editTextTextPassword
 id editUserButton
 id edit_query
 id elastic
@@ -3350,6 +3347,8 @@ id linear
 id linearLayout
 id listMode
 id list_item
+id loginPassword
+id loginUsername
 id m3_side_sheet
 id marquee
 id masked
@@ -3474,6 +3473,7 @@ id ratio
 id rectangle
 id rectangles
 id register
+id rememberMe
 id report_drawn
 id reverseSawtooth
 id right

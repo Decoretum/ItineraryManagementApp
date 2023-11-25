@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                         realm.commitTransaction();
 
                         long userCount = realm.where(User.class).count();
-                        Toast.makeText(this, "New user saved  Total: " + Long.toString(userCount), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "User saved  Total: " + Long.toString(userCount), Toast.LENGTH_LONG).show();
 
                         this.finish();
                     }

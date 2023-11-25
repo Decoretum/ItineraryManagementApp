@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.itinerarymanagementapp.R;
+import com.example.itinerarymanagementapp.screens.user.LoginActivity_;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Click
     public void next()
     {
-        //
+        LoginActivity_.intent(this).start();
     }
 
 

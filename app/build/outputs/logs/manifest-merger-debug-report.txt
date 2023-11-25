@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:1-63:12
 MERGED from [Android-Image-Cropper-release.aar] C:\Users\pc2\.gradle\caches\transforms-3\3467b966172fab6b27196955c84ff030\transformed\Android-Image-Cropper-release\AndroidManifest.xml:2:1-9:12
 MERGED from [io.realm:realm-android-library:10.16.0] C:\Users\pc2\.gradle\caches\transforms-3\26c53afbd3533330a41c888c7dd45f19\transformed\realm-android-library-10.16.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:17:1-32:12
@@ -64,8 +64,8 @@ MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\pc2\.gradle\cach
 	xmlns:android
 		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:5:5-52:19
-INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:5:5-52:19
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:5:5-61:19
+INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:5:5-61:19
 MERGED from [com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.1] C:\Users\pc2\.gradle\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\pc2\.gradle\caches\transforms-3\29487b7b575731628d833e95a4f3097c\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
@@ -110,72 +110,90 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\pc2\.gradle\caches
 		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:8:9-65
 	android:name
 		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:6:9-33
-activity#com.example.itinerarymanagementapp.screens.user.LoginActivity
+activity#com.example.itinerarymanagementapp.screens.user.AdminActivity_
 ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:16:9-18:40
 	android:exported
 		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:18:13-37
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:17:13-55
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:17:13-56
+activity#com.example.itinerarymanagementapp.screens.user.EditUserActivity_
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:20:13-59
+activity#com.example.itinerarymanagementapp.screens.user.RegisterActivity_
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:23:13-59
+activity#com.example.itinerarymanagementapp.screens.user.LoginActivity_
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:26:13-56
 activity#com.example.itinerarymanagementapp.screens.MainActivity_
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:19:9-27:20
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:28:9-36:20
 	android:exported
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:20:13-50
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:29:13-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:27-74
 activity#com.example.itinerarymanagementapp.screens.event.EditEventActivity
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:28:9-30:40
-	android:exported
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:30:13-37
-	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:29:13-60
-activity#com.example.itinerarymanagementapp.screens.event.ViewEventActivity
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:31:9-33:40
-	android:exported
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:33:13-37
-	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:32:13-60
-activity#com.example.itinerarymanagementapp.screens.event.CreateEventActivity
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:34:9-36:40
-	android:exported
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:36:13-37
-	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:35:13-62
-activity#com.example.itinerarymanagementapp.screens.event.EventListActivity
 ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:37:9-39:40
 	android:exported
 		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:39:13-37
 	android:name
 		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:38:13-60
-provider#androidx.core.content.FileProvider
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:41:9-49:20
-	android:grantUriPermissions
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:45:13-47
-	android:authorities
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:43:13-56
+activity#com.example.itinerarymanagementapp.screens.event.ViewEventActivity
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:40:9-42:40
 	android:exported
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:44:13-37
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:42:13-62
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:41:13-60
+activity#com.example.itinerarymanagementapp.screens.event.CreateEventActivity
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:43:9-45:40
+	android:exported
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:45:13-37
+	android:name
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:44:13-62
+activity#com.example.itinerarymanagementapp.screens.event.EventListActivity
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:46:9-48:40
+	android:exported
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:47:13-60
+provider#androidx.core.content.FileProvider
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:50:9-58:20
+	android:grantUriPermissions
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:54:13-47
+	android:authorities
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:52:13-56
+	android:exported
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:51:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:46:13-48:62
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:55:13-57:62
 	android:resource
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:48:17-59
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:57:17-59
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:47:17-67
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:56:17-67
 activity#com.example.itinerarymanagementapp.ImageActivity_
-ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:51:9-52
+ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:60:9-52
 	android:name
-		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:51:19-49
+		ADDED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml:60:19-49
 uses-sdk
 INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\pc2\[acer] 4-1\CS 181.04\Android Project\ItineraryManagementApp\app\src\main\AndroidManifest.xml

@@ -16,6 +16,10 @@
         "source": "com.example.itinerarymanagementapp-main-35:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_activity_admin.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/layout/activity_admin.xml"
+    },
+    {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "com.example.itinerarymanagementapp-main-35:/mipmap-xhdpi/ic_launcher.webp"
     },
@@ -44,8 +48,16 @@
         "source": "com.example.itinerarymanagementapp-main-35:/xml/backup_rules.xml"
     },
     {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_activity_edit_user.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/layout/activity_edit_user.xml"
+    },
+    {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/xml_file_provider_path.xml.flat",
         "source": "com.example.itinerarymanagementapp-main-35:/xml/file_provider_path.xml"
+    },
+    {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_user_row_layout.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/layout/user_row_layout.xml"
     },
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -64,12 +76,12 @@
         "source": "com.example.itinerarymanagementapp-main-35:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.itinerarymanagementapp-main-35:/mipmap-hdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "com.example.itinerarymanagementapp-main-35:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/drawable_ic_launcher_foreground.xml.flat",
@@ -78,6 +90,10 @@
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_activity_edit_event.xml.flat",
         "source": "com.example.itinerarymanagementapp-main-35:/layout/activity_edit_event.xml"
+    },
+    {
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_activity_register.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/layout/activity_register.xml"
     },
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-33:/mipmap-hdpi_ic_launcher.webp.flat",

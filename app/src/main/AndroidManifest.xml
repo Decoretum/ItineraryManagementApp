@@ -14,13 +14,16 @@
         android:theme="@style/Theme.ItineraryManagementApp"
         tools:targetApi="31">
         <activity
-            android:name=".screens.user.EditUserActivity"
+            android:name=".screens.user.AdminActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.user.RegisterActivity"
+            android:name=".screens.user.EditUserActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.user.LoginActivity"
+            android:name=".screens.user.RegisterActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.user.LoginActivity_"
             android:exported="false" />
         <activity
             android:name=".screens.MainActivity_"

@@ -26,16 +26,12 @@ public class TripListActivity extends AppCompatActivity {
 
     @ViewById
     TextView tripTitle;
-
     @ViewById
     RecyclerView tripRecyclerView;
-
     @ViewById
     EditText categoryFilterInput;
-
     @ViewById
     Button addTripBtn;
-
     @ViewById
     Button tripListBackBtn;
 

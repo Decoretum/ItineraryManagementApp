@@ -21,12 +21,10 @@ public class TripAdapter extends RealmRecyclerViewAdapter<Trip, TripAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         // Instantiate Trip row UI components
         TextView rowTripName;
-
         TextView rowTripCategory;
-
         ImageButton viewTripBtn;
-
         ImageButton deleteTripBtn;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Find Trip row UI by ID

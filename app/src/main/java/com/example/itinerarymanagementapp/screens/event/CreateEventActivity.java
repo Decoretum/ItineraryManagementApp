@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -74,7 +75,7 @@ public class CreateEventActivity extends AppCompatActivity {
     ImageButton imageButton;
 
     public static File ImageFile;
-    public static byte[] byteArray;
+    // public static byte[] byteArray;
     public static int REQUEST_CODE_IMAGE_SCREEN = 0;
 
     @Override
@@ -85,7 +86,22 @@ public class CreateEventActivity extends AppCompatActivity {
         cancelEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // If the File for Image Exists
+                if (ImageFile.exists()){
+                    ImageFile.delete();
+                }
                 finish();
+            }
+        });
+
+        createEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    createEvent();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -118,6 +134,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 }).check();
     }
 
+    // Will load after @AfterViews or the checkPermissions()
     public void init()
     {
         // check if savedImage.jpeg exists in path
@@ -131,15 +148,15 @@ public class CreateEventActivity extends AppCompatActivity {
         }
     }
 
-    //Start Result
-    public void onTouch(View view){
-        ImageActivity_.intent(CreateEventActivity.this).startForResult(REQUEST_CODE_IMAGE_SCREEN);
-    }
-
     public void toastRequirePermissions()
     {
         Toast.makeText(this, "You must provide permissions for app to run", Toast.LENGTH_LONG).show();
         finish();
+    }
+
+    //Start Result
+    public void onTouch(View view){
+        ImageActivity_.intent(CreateEventActivity.this).startForResult(REQUEST_CODE_IMAGE_SCREEN);
     }
 
     //Receive Result Data
@@ -163,7 +180,7 @@ public class CreateEventActivity extends AppCompatActivity {
                     refreshImageView((File) rawData.get(0));
 
                     // Declare both variables in global scope
-                    byteArray = jpeg;
+                    // byteArray = jpeg;
                     ImageFile = (File) rawData.get(0);
                     Log.d("GaelLogs", "File Name for Pic is " + ImageFile.toString());
                 }
@@ -183,12 +200,12 @@ public class CreateEventActivity extends AppCompatActivity {
         // this is the root directory for the images
         File getImageDir = getExternalCacheDir();
 
-        // just a sample, normally you have a diff image name each time
-        String fileName = editEventName.getText().toString().trim();
-        File savedImage = new File(getImageDir, fileName + ".jpeg");
+        // Don't use final name yet for the file
+        //String fileName = editEventName.getText().toString().trim();
+        File savedImage = new File(getImageDir, "random.jpeg");
 
         data.add(savedImage);
-        data.add(jpeg);
+        // data.add(jpeg);
 
         //Temporarily save Image File
         FileOutputStream fos = new FileOutputStream(savedImage);
@@ -232,19 +249,19 @@ public class CreateEventActivity extends AppCompatActivity {
             return;
         }
 
-        //Check if event category exists in DB
+        //Event Category Validation
         eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
         if (!event1.isValid()){
             realm = Realm.getDefaultInstance();
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();
-            newCategory.setName(eventCategory);
+            newCategory.setName(eventCategory.toLowerCase());
             newCategory.setUuid(uuid);
             realm.copyToRealmOrUpdate(newCategory);
             realm.commitTransaction();
         }
 
-        //Entity Validation
+        //Event Entity Validation
         RealmResults<Event> results = realm.where(Event.class).equalTo("name",
                 eventName).findAll();
 
@@ -261,8 +278,13 @@ public class CreateEventActivity extends AppCompatActivity {
             newEvent.setEventDescription(eventDescription);
             newEvent.setTripNameReference(trip.getTripName());
             newEvent.setUuid(eventUUID);
-            newEvent.setCategory(eventCategory);
+            newEvent.setCategory(eventCategory.toLowerCase());
             newEvent.setTimeRange(eventTime);
+
+            //Re-configure the Image File
+            File imgDir = getExternalCacheDir();
+            File renamedFile = new File(imgDir, eventName + ".jpeg");
+            ImageFile.renameTo(renamedFile);
 
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(newEvent);

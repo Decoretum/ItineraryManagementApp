@@ -75,7 +75,6 @@ public class CreateEventActivity extends AppCompatActivity {
     ImageButton imageButton;
 
     public static File ImageFile;
-    // public static byte[] byteArray;
     public static int REQUEST_CODE_IMAGE_SCREEN = 0;
 
     @Override
@@ -123,7 +122,7 @@ public class CreateEventActivity extends AppCompatActivity {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report){
                         if (report.areAllPermissionsGranted()){
-                            //
+                            init();
                         } else {
                             for (PermissionDeniedResponse a : report.getDeniedPermissionResponses()){
                                 Log.d("GaelLogs", a.getRequestedPermission() + " | " + a.getPermissionName().toString());
@@ -225,7 +224,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 .into(imageView4);
     }
 
-    public void createEvent() throws IOException {
+    private void createEvent() throws IOException {
         String eventName = editEventName.getText().toString().trim();
         String eventDescription = editEventDescription.getText().toString().trim();
         String eventTime = editTextTime.getText().toString().trim();
@@ -279,7 +278,7 @@ public class CreateEventActivity extends AppCompatActivity {
             newEvent.setTripNameReference(trip.getTripName());
             newEvent.setUuid(eventUUID);
             newEvent.setCategory(eventCategory.toLowerCase());
-            newEvent.setTimeRange(eventTime);
+            newEvent.setTimeRange(eventDate + "|||" + eventTime);
 
             //Re-configure the Image File
             File imgDir = getExternalCacheDir();

@@ -90,12 +90,13 @@ public final class CreateEventActivity_
     @Override
     public void onViewChanged(HasViews hasViews) {
         this.imageView4 = hasViews.internalFindViewById(R.id.imageView4);
-        this.editTripName = hasViews.internalFindViewById(R.id.editTripName);
-        this.editTripCategory = hasViews.internalFindViewById(R.id.editTripCategory);
-        this.editTripDescription = hasViews.internalFindViewById(R.id.editTripDescription);
-        this.editTripTime = hasViews.internalFindViewById(R.id.editTripTime);
-        this.createTrip = hasViews.internalFindViewById(R.id.createTrip);
-        this.cancelTrip = hasViews.internalFindViewById(R.id.cancelTrip);
+        this.editEventName = hasViews.internalFindViewById(R.id.editEventName);
+        this.editEventCategory = hasViews.internalFindViewById(R.id.editEventCategory);
+        this.editEventDescription = hasViews.internalFindViewById(R.id.editEventDescription);
+        this.editTextDate = hasViews.internalFindViewById(R.id.editTextDate);
+        this.editTextTime = hasViews.internalFindViewById(R.id.editTextTime);
+        this.createEvent = hasViews.internalFindViewById(R.id.createEvent);
+        this.cancelEvent = hasViews.internalFindViewById(R.id.cancelEvent);
         this.imageButton = hasViews.internalFindViewById(R.id.imageButton);
         checkPermissions();
     }

@@ -225,6 +225,7 @@ public class CreateEventActivity extends AppCompatActivity {
     }
 
     private void createEvent() throws IOException {
+        realm = Realm.getDefaultInstance();
         String eventName = editEventName.getText().toString().trim();
         String eventDescription = editEventDescription.getText().toString().trim();
         String eventTime = editTextTime.getText().toString().trim();
@@ -251,7 +252,6 @@ public class CreateEventActivity extends AppCompatActivity {
         //Event Category Validation
         eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
         if (!event1.isValid()){
-            realm = Realm.getDefaultInstance();
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();
             newCategory.setName(eventCategory.toLowerCase());

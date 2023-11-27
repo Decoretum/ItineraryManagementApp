@@ -80,6 +80,7 @@ public class EditEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_event);
+        realm = Realm.getDefaultInstance();
 
         event = realm.where(Event.class).contains("uuid", uuid).findFirst();
         editEventName2.setText(event.getEventName());
@@ -256,6 +257,7 @@ public class EditEventActivity extends AppCompatActivity {
     }
 
     private void edit() throws IOException {
+        realm = Realm.getDefaultInstance();
         String eventName = editEventName2.getText().toString().trim();
         String eventDescription = editEventDescription2.getText().toString().trim();
         String eventTime = editTextTime2.getText().toString().trim();
@@ -282,7 +284,6 @@ public class EditEventActivity extends AppCompatActivity {
         //Event Category Validation
         eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
         if (!event1.isValid()){
-            realm = Realm.getDefaultInstance();
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();
             newCategory.setName(eventCategory.toLowerCase());
@@ -322,7 +323,6 @@ public class EditEventActivity extends AppCompatActivity {
                 ImageFile.renameTo(renamedFile);
             }
 
-            realm = Realm.getDefaultInstance();
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(event);
             realm.commitTransaction();

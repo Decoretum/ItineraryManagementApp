@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import org.androidannotations.annotations.ViewById;
 
 import com.example.itinerarymanagementapp.adapters.EventAdapter;
 import com.example.itinerarymanagementapp.models.Event;
+import com.example.itinerarymanagementapp.models.Trip;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -42,6 +44,7 @@ public class EventListActivity extends AppCompatActivity {
     @ViewById
     EditText filterCategory;
 
+    public static String referenceUUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,21 +71,34 @@ public class EventListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 realm = Realm.getDefaultInstance();
                 String queriedCategory = filterCategory.getText().toString();
-                RealmResults<Event> queriedEvents = realm.where(Event.class).contains("category", queriedCategory).findAll();
-                EventAdapter eventAdapter = new EventAdapter(EventListActivity.this, queriedEvents, true);
-                recyclerView.setAdapter(eventAdapter);
+                Trip trip = realm.where(Trip.class).contains("uuid", referenceUUID).findFirst();
+                if (!queriedCategory.equals("")){
+                    RealmResults<Event> queriedEvents = realm.where(Event.class).contains("tripNameReference", trip.getTripName()).contains("category", queriedCategory).findAll();
+                    EventAdapter eventAdapter = new EventAdapter(EventListActivity.this, queriedEvents, true);
+                    recyclerView.setAdapter(eventAdapter);
+                } else {
+                    RealmResults<Event> queriedEvents = realm.where(Event.class).contains("tripNameReference", trip.getTripName()).findAll();
+                    EventAdapter eventAdapter = new EventAdapter(EventListActivity.this, queriedEvents, true);
+                    recyclerView.setAdapter(eventAdapter);
+                }
+
             }
         });
     }
 
     @AfterViews
     public void initialize(){
+        realm = Realm.getDefaultInstance();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(manager);
 
-        realm = Realm.getDefaultInstance();
-        RealmResults<Event> events = realm.where(Event.class).findAll();
+        SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
+        String tripUUID = store.getString("tripUUID", "");
+        referenceUUID = tripUUID;
+        Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
+
+        RealmResults<Event> events = realm.where(Event.class).contains("tripNameReference", trip.getTripName()).findAll();
 
         EventAdapter eventAdapter = new EventAdapter(this, events, true);
         recyclerView.setAdapter(eventAdapter);

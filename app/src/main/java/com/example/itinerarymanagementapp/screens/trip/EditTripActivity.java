@@ -81,7 +81,7 @@ public class EditTripActivity extends AppCompatActivity {
             editTripDescriptionInput.setText(trip.getDescription());
             blankInputToast("Description");
         }
-        else if(tripNamesData.size() > 0){
+        else if(tripNamesData.size() > 0 && !tripName.equals(editTripNameInput.getText().toString())){
             tripExistsToast();
         }
         else{
@@ -129,5 +129,10 @@ public class EditTripActivity extends AppCompatActivity {
         {
             realm.close();
         }
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit_trip);
     }
 }

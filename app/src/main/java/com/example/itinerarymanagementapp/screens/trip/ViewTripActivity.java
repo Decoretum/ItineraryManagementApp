@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -46,9 +47,10 @@ public class ViewTripActivity extends AppCompatActivity {
         tripPrefs = getSharedPreferences("Trip", MODE_PRIVATE);
         tripPrefsEditor = tripPrefs.edit();
         String tripUUID = tripPrefs.getString("tripUUID", null);
-
-        RealmResults<Trip> calledUUID = realm.where(Trip.class).equalTo("uuid", tripUUID).findAll();
-        Trip t = calledUUID.get(0);
+        Log.d("LOGGING2", "viewTrip: "+ tripUUID);
+//        RealmResults<Trip> calledUUID = realm.where(Trip.class).equalTo("uuid", tripUUID).findAll();
+//        Trip t = calledUUID.get(0);
+        Trip t = realm.where(Trip.class).equalTo("uuid", tripUUID).findFirst();
 
         viewTripTitle.setText(t.getTripName());
         viewTripCategory.setText(t.getCategory());
@@ -84,5 +86,11 @@ public class ViewTripActivity extends AppCompatActivity {
         {
             realm.close();
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_view_trip);
     }
 }

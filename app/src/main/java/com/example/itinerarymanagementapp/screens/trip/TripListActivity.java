@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ public class TripListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_list);
+        realm = Realm.getDefaultInstance();
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mLayoutManager.setOrientation(RecyclerView.VERTICAL);
         tripRecyclerView.setLayoutManager(mLayoutManager);
@@ -66,8 +68,9 @@ public class TripListActivity extends AppCompatActivity {
         tripPrefs = getSharedPreferences("Trip", MODE_PRIVATE);
         tripPrefsEditor = tripPrefs.edit();
         String tripUUID = t.getUuid();
-        userPrefsEditor.putString("tripUUID", tripUUID);
-
+        Log.d("LOGGING", "viewTrip: "+ tripUUID);
+        tripPrefsEditor.putString("tripUUID", tripUUID);
+        tripPrefsEditor.apply();
         startActivity(intent);
         finish();
     }

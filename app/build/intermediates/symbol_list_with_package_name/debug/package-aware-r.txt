@@ -3156,6 +3156,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addTripBtn
+id admin
 id alertTitle
 id aligned
 id all
@@ -3178,6 +3179,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
+id birthday
 id blocking
 id bottom
 id bounce
@@ -3187,8 +3189,11 @@ id bounceStart
 id buttonPanel
 id cache_measures
 id callMeasure
+id cance
 id cancel
+id cancelRegister
 id cancelTripEditBtn
+id cancelUserEdit
 id cancel_button
 id capture
 id card_view
@@ -3207,6 +3212,9 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id clearUser
+id clearUserPrefs
+id clearUserRealm
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3214,6 +3222,7 @@ id clockwise
 id closest
 id collapseActionView
 id compress
+id confirmPassword
 id confirm_button
 id constraint
 id container
@@ -3244,6 +3253,7 @@ id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
 id deleteTripBtn
+id deleteUserButton
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3281,6 +3291,7 @@ id editTripDescriptionTitle
 id editTripNameInput
 id editTripNameTitle
 id editTripTitle
+id editUserButton
 id edit_query
 id elastic
 id embed
@@ -3296,6 +3307,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstName
 id fitCenter
 id fitEnd
 id fitStart
@@ -3339,6 +3351,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id lastName
 id layout
 id left
 id leftToRight
@@ -3349,6 +3362,8 @@ id linear
 id linearLayout
 id listMode
 id list_item
+id loginPassword
+id loginUsername
 id m3_side_sheet
 id marquee
 id masked
@@ -3419,6 +3434,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id next
 id noScroll
 id noState
 id none
@@ -3455,6 +3471,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password
 id password_toggle
 id path
 id pathRelative
@@ -3470,6 +3487,8 @@ id radio
 id ratio
 id rectangle
 id rectangles
+id register
+id rememberMe
 id report_drawn
 id reverseSawtooth
 id right
@@ -3482,7 +3501,9 @@ id rowTripCategory
 id rowTripName
 id rowUserName
 id row_index_key
+id saveRegister
 id saveTripEditBtn
+id saveUserEdit
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3512,6 +3533,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signIn
 id sin
 id skipCollapsed
 id skipped
@@ -3565,6 +3587,19 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView11
+id textView12
+id textView13
+id textView14
+id textView2
+id textView3
+id textView4
+id textView5
+id textView6
+id textView7
+id textView8
+id textView9
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3609,6 +3644,8 @@ id unlabeled
 id up
 id useLogo
 id userPassword
+id userRecycler
+id username
 id vertical_only
 id viewTripBtn
 id viewTripCategory
@@ -3744,12 +3781,17 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin
 layout activity_capture_image
 layout activity_create_event
 layout activity_create_trip
 layout activity_edit_event
 layout activity_edit_trip
+layout activity_edit_user
 layout activity_event_list
+layout activity_login
+layout activity_main
+layout activity_register
 layout activity_trip_list
 layout activity_view_event
 layout activity_view_trip
@@ -3833,6 +3875,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout trip_row
+layout user_row_layout
 menu crop_image_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

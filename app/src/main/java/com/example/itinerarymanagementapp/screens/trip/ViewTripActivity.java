@@ -48,8 +48,6 @@ public class ViewTripActivity extends AppCompatActivity {
         tripPrefsEditor = tripPrefs.edit();
         String tripUUID = tripPrefs.getString("tripUUID", null);
         Log.d("LOGGING2", "viewTrip: "+ tripUUID);
-//        RealmResults<Trip> calledUUID = realm.where(Trip.class).equalTo("uuid", tripUUID).findAll();
-//        Trip t = calledUUID.get(0);
         Trip t = realm.where(Trip.class).equalTo("uuid", tripUUID).findFirst();
 
         viewTripTitle.setText(t.getTripName());

@@ -93,7 +93,7 @@ public class EditTripActivity extends AppCompatActivity {
 
             tripEditSavedToast();
 
-            Intent intent = new Intent(this, ViewTripActivity.class);
+            Intent intent = new Intent(this, ViewTripActivity_.class);
             startActivity(intent);
             finish();
         }

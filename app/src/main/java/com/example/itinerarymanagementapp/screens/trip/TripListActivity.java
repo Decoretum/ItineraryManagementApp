@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Trip;
+import com.example.itinerarymanagementapp.screens.MainActivity_;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -92,12 +93,12 @@ public class TripListActivity extends AppCompatActivity {
         finish();
     }
 
-//    @Click
-//    public void cancelEditBtn(){
-//        Intent intent = new Intent(this, MainActivity_.class);
-//        startActivity(intent);
-//        finish();
-//    }
+    @Click
+    public void tripListBackBtn(){
+        Intent intent = new Intent(this, MainActivity_.class);
+        startActivity(intent);
+        finish();
+    }
 
     public void onDestroy()
     {

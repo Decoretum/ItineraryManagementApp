@@ -2976,6 +2976,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable box_drawing
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3078,6 +3079,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_button
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3166,6 +3168,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id applyFilterButton
 id arc
 id asConfigured
 id async
@@ -3174,6 +3177,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id backBtn
+id backButton
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3191,6 +3195,8 @@ id cache_measures
 id callMeasure
 id cance
 id cancel
+id cancelEditEvent
+id cancelEvent
 id cancelRegister
 id cancelTripEditBtn
 id cancelUserEdit
@@ -3198,6 +3204,7 @@ id cancel_button
 id capture
 id card_view
 id carryVelocity
+id category
 id categoryFilterInput
 id center
 id centerCrop
@@ -3234,6 +3241,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id createEvent
 id createTripTitle
 id crop
 id cropImageView
@@ -3248,10 +3256,12 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
+id datetimeview
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteEventButton
 id deleteTripBtn
 id deleteUserButton
 id deltaRelative
@@ -3283,6 +3293,17 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editEvent
+id editEventCategory
+id editEventCategory2
+id editEventDescription
+id editEventDescription2
+id editEventName
+id editEventName2
+id editTextDate
+id editTextDate2
+id editTextTime
+id editTextTime2
 id editTripBtn
 id editTripCategoryInput
 id editTripCategoryTitle
@@ -3299,6 +3320,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id eventName
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3307,6 +3329,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filterCategory
 id firstName
 id fitCenter
 id fitEnd
@@ -3340,6 +3363,12 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButton
+id imageButton2
+id imageView
+id imageView2
+id imageView4
+id imageView5
 id immediateStop
 id included
 id indeterminate
@@ -3434,6 +3463,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newEventButton
 id next
 id noScroll
 id noState
@@ -3487,6 +3517,7 @@ id radio
 id ratio
 id rectangle
 id rectangles
+id recyclerView
 id register
 id rememberMe
 id report_drawn
@@ -3610,6 +3641,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeRange
 id title
 id titleDividerNoCustom
 id title_template
@@ -3647,6 +3679,13 @@ id userPassword
 id userRecycler
 id username
 id vertical_only
+id viewEventBackButton
+id viewEventButton
+id viewEventCategory
+id viewEventDescription
+id viewEventEditButton
+id viewEventName
+id viewEventTime
 id viewTripBtn
 id viewTripCategory
 id viewTripTitle
@@ -3813,6 +3852,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout event_row_layout
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

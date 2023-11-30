@@ -105,6 +105,16 @@ public final class TripListActivity_
             }
             );
         }
+        if (this.tripListBackBtn!= null) {
+            this.tripListBackBtn.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    TripListActivity_.this.tripListBackBtn();
+                }
+            }
+            );
+        }
     }
 
     public static class IntentBuilder_

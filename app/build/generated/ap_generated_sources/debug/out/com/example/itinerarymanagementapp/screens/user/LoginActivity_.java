@@ -127,7 +127,7 @@ public final class LoginActivity_
             }
             );
         }
-        init();
+        checkPermissions();
     }
 
     public static class IntentBuilder_

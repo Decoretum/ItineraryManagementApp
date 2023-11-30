@@ -24,6 +24,10 @@
         "source": "com.example.itinerarymanagementapp-main-6:/drawable/ic_launcher_background.xml"
     },
     {
+        "merged": "com.example.itinerarymanagementapp-merged_res-4:/drawable_box_drawing.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-6:/drawable/box_drawing.xml"
+    },
+    {
         "merged": "com.example.itinerarymanagementapp-merged_res-4:/layout_activity_create_event.xml.flat",
         "source": "com.example.itinerarymanagementapp-main-6:/layout/activity_create_event.xml"
     },
@@ -46,6 +50,10 @@
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-4:/layout_activity_view_event.xml.flat",
         "source": "com.example.itinerarymanagementapp-main-6:/layout/activity_view_event.xml"
+    },
+    {
+        "merged": "com.example.itinerarymanagementapp-merged_res-4:/layout_event_row_layout.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-6:/layout/event_row_layout.xml"
     },
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-4:/layout_trip_row.xml.flat",
@@ -130,5 +138,9 @@
     {
         "merged": "com.example.itinerarymanagementapp-merged_res-4:/layout_activity_register.xml.flat",
         "source": "com.example.itinerarymanagementapp-main-6:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.itinerarymanagementapp-merged_res-4:/drawable_rounded_button.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-6:/drawable/rounded_button.xml"
     }
 ]

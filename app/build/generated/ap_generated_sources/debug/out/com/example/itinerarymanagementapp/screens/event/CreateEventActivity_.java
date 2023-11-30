@@ -15,15 +15,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class CreateEventActivity_
     extends CreateEventActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +44,7 @@ public final class CreateEventActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +85,20 @@ public final class CreateEventActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.imageView4 = hasViews.internalFindViewById(R.id.imageView4);
+        this.editEventName = hasViews.internalFindViewById(R.id.editEventName);
+        this.editEventCategory = hasViews.internalFindViewById(R.id.editEventCategory);
+        this.editEventDescription = hasViews.internalFindViewById(R.id.editEventDescription);
+        this.editTextDate = hasViews.internalFindViewById(R.id.editTextDate);
+        this.editTextTime = hasViews.internalFindViewById(R.id.editTextTime);
+        this.createEvent = hasViews.internalFindViewById(R.id.createEvent);
+        this.cancelEvent = hasViews.internalFindViewById(R.id.cancelEvent);
+        this.imageButton = hasViews.internalFindViewById(R.id.imageButton);
+        checkPermissions();
     }
 
     public static class IntentBuilder_

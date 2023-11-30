@@ -15,15 +15,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class EventListActivity_
     extends EventListActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
@@ -42,6 +44,7 @@ public final class EventListActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -82,6 +85,16 @@ public final class EventListActivity_
     @Override
     public<T> void putBean(Class<T> key, T value) {
         beans_.put(key, value);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.recyclerView = hasViews.internalFindViewById(R.id.recyclerView);
+        this.newEventButton = hasViews.internalFindViewById(R.id.newEventButton);
+        this.backButton = hasViews.internalFindViewById(R.id.backButton);
+        this.applyFilterButton = hasViews.internalFindViewById(R.id.applyFilterButton);
+        this.filterCategory = hasViews.internalFindViewById(R.id.filterCategory);
+        initialize();
     }
 
     public static class IntentBuilder_

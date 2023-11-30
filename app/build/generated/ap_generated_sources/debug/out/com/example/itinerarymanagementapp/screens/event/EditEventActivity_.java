@@ -11,22 +11,26 @@ import java.util.HashMap;
 import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class EditEventActivity_
     extends EditEventActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
+    public final static String UUID_EXTRA = "uuid";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public final class EditEventActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
+        injectExtras_();
     }
 
     @Override
@@ -84,6 +90,34 @@ public final class EditEventActivity_
         beans_.put(key, value);
     }
 
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.imageView5 = hasViews.internalFindViewById(R.id.imageView5);
+        this.editEventName2 = hasViews.internalFindViewById(R.id.editEventName2);
+        this.editEventCategory2 = hasViews.internalFindViewById(R.id.editEventCategory2);
+        this.editEventDescription2 = hasViews.internalFindViewById(R.id.editEventDescription2);
+        this.editTextDate2 = hasViews.internalFindViewById(R.id.editTextDate2);
+        this.editTextTime2 = hasViews.internalFindViewById(R.id.editTextTime2);
+        this.editEvent = hasViews.internalFindViewById(R.id.editEvent);
+        this.cancelEditEvent = hasViews.internalFindViewById(R.id.cancelEditEvent);
+        checkPermissions();
+    }
+
+    private void injectExtras_() {
+        Bundle extras_ = getIntent().getExtras();
+        if (extras_!= null) {
+            if (extras_.containsKey(UUID_EXTRA)) {
+                this.uuid = extras_.getString(UUID_EXTRA);
+            }
+        }
+    }
+
+    @Override
+    public void setIntent(Intent newIntent) {
+        super.setIntent(newIntent);
+        injectExtras_();
+    }
+
     public static class IntentBuilder_
         extends ActivityIntentBuilder<EditEventActivity_.IntentBuilder_>
     {
@@ -121,6 +155,16 @@ public final class EditEventActivity_
                 }
             }
             return new PostActivityStarter(context);
+        }
+
+        /**
+         * @param uuid
+         *     the value for this extra
+         * @return
+         *     the IntentBuilder to chain calls
+         */
+        public EditEventActivity_.IntentBuilder_ uuid(String uuid) {
+            return super.extra(UUID_EXTRA, uuid);
         }
     }
 }

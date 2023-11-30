@@ -11,22 +11,26 @@ import java.util.HashMap;
 import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import androidx.core.app.ActivityCompat;
+import com.example.itinerarymanagementapp.R;
 import org.androidannotations.api.bean.BeanHolder;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.builder.PostActivityStarter;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class ViewEventActivity_
     extends ViewEventActivity
-    implements BeanHolder, HasViews
+    implements BeanHolder, HasViews, OnViewChangedListener
 {
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private final Map<Class<?> , Object> beans_ = new HashMap<Class<?> , Object>();
+    public final static String UUID_EXTRA = "uuid";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public final class ViewEventActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
+        injectExtras_();
     }
 
     @Override
@@ -84,6 +90,32 @@ public final class ViewEventActivity_
         beans_.put(key, value);
     }
 
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        this.viewEventName = hasViews.internalFindViewById(R.id.viewEventName);
+        this.viewEventTime = hasViews.internalFindViewById(R.id.viewEventTime);
+        this.viewEventDescription = hasViews.internalFindViewById(R.id.viewEventDescription);
+        this.viewEventCategory = hasViews.internalFindViewById(R.id.viewEventCategory);
+        this.imageView2 = hasViews.internalFindViewById(R.id.imageView2);
+        this.viewEventEditButton = hasViews.internalFindViewById(R.id.viewEventEditButton);
+        this.viewEventBackButton = hasViews.internalFindViewById(R.id.viewEventBackButton);
+    }
+
+    private void injectExtras_() {
+        Bundle extras_ = getIntent().getExtras();
+        if (extras_!= null) {
+            if (extras_.containsKey(UUID_EXTRA)) {
+                this.uuid = extras_.getString(UUID_EXTRA);
+            }
+        }
+    }
+
+    @Override
+    public void setIntent(Intent newIntent) {
+        super.setIntent(newIntent);
+        injectExtras_();
+    }
+
     public static class IntentBuilder_
         extends ActivityIntentBuilder<ViewEventActivity_.IntentBuilder_>
     {
@@ -121,6 +153,16 @@ public final class ViewEventActivity_
                 }
             }
             return new PostActivityStarter(context);
+        }
+
+        /**
+         * @param uuid
+         *     the value for this extra
+         * @return
+         *     the IntentBuilder to chain calls
+         */
+        public ViewEventActivity_.IntentBuilder_ uuid(String uuid) {
+            return super.extra(UUID_EXTRA, uuid);
         }
     }
 }

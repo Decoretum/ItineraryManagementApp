@@ -1,8 +1,10 @@
 package com.example.itinerarymanagementapp.screens.user;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,6 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.User;
 import com.example.itinerarymanagementapp.screens.trip.TripListActivity_;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.multi.BaseMultiplePermissionsListener;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -104,6 +110,29 @@ public class LoginActivity extends AppCompatActivity {
 
 
     @AfterViews
+    public void checkPermissions(){
+        Dexter.withContext(this)
+                .withPermissions(
+                        Manifest.permission.READ_MEDIA_IMAGES,
+                        Manifest.permission.READ_MEDIA_VIDEO,
+//                        Manifest.permission.READ_EXTERNAL_STORAGE,
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA
+                ).withListener(new BaseMultiplePermissionsListener(){
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport report){
+                        if (report.areAllPermissionsGranted()){
+                            init();
+                        } else {
+                            for (PermissionDeniedResponse a : report.getDeniedPermissionResponses()){
+                                Log.d("GaelLogs", a.getRequestedPermission() + " | " + a.getPermissionName().toString());
+                            }
+                            toastRequirePermissions();
+                        }
+                    }
+                }).check();
+    }
+
     public void init()
     {
         realm = Realm.getDefaultInstance();
@@ -123,6 +152,12 @@ public class LoginActivity extends AppCompatActivity {
             loginPassword.setText(userLogin.getPassword());
             rememberMe.setChecked(true);
         }
+    }
+
+    public void toastRequirePermissions()
+    {
+        Toast.makeText(this, "You must provide permissions for app to run", Toast.LENGTH_LONG).show();
+        finish();
     }
 
 

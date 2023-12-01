@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -86,7 +85,7 @@ public class CreateEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // If the File for Image Exists
-                if (ImageFile.exists()){
+                if (ImageFile != null){
                     ImageFile.delete();
                 }
                 finish();
@@ -115,37 +114,22 @@ public class CreateEventActivity extends AppCompatActivity {
                 .withPermissions(
                         Manifest.permission.READ_MEDIA_IMAGES,
                         Manifest.permission.READ_MEDIA_VIDEO,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                        Manifest.permission.READ_EXTERNAL_STORAGE,
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.CAMERA
                 ).withListener(new BaseMultiplePermissionsListener(){
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report){
-                        if (report.areAllPermissionsGranted()){
-                            init();
-                        } else {
+                        if (!report.areAllPermissionsGranted()){
                             for (PermissionDeniedResponse a : report.getDeniedPermissionResponses()){
                                 Log.d("GaelLogs", a.getRequestedPermission() + " | " + a.getPermissionName().toString());
+                                toastRequirePermissions();
                             }
-                            toastRequirePermissions();
                         }
                     }
                 }).check();
     }
 
-    // Will load after @AfterViews or the checkPermissions()
-    public void init()
-    {
-        // check if savedImage.jpeg exists in path
-        // load via picasso if exists
-
-        File getImageDir = getExternalCacheDir();
-        File savedImage = new File(getImageDir, "savedImage.jpeg");
-
-        if (savedImage.exists()) {
-            refreshImageView(savedImage);
-        }
-    }
 
     public void toastRequirePermissions()
     {
@@ -251,17 +235,19 @@ public class CreateEventActivity extends AppCompatActivity {
 
         //Event Category Validation
         eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
-        if (!event1.isValid()){
+        if (event1 == null){
+            Log.d("GaelLogs", "Not yet existed");
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();
             newCategory.setName(eventCategory.toLowerCase());
             newCategory.setUuid(uuid);
+            realm.beginTransaction();
             realm.copyToRealmOrUpdate(newCategory);
             realm.commitTransaction();
         }
 
         //Event Entity Validation
-        RealmResults<Event> results = realm.where(Event.class).equalTo("name",
+        RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
                 eventName).findAll();
 
         if (results.isEmpty()){
@@ -280,23 +266,32 @@ public class CreateEventActivity extends AppCompatActivity {
             newEvent.setCategory(eventCategory.toLowerCase());
             newEvent.setTimeRange(eventDate + "|||" + eventTime);
 
+            boolean hm = ImageFile == null;
+            if (hm == true){
+                Log.d("GaelLogs", "NULL");
+            }
             //Re-configure the Image File
-            File imgDir = getExternalCacheDir();
-            File renamedFile = new File(imgDir, eventName + ".jpeg");
-            ImageFile.renameTo(renamedFile);
+            if (ImageFile != null){
+                File imgDir = getExternalCacheDir();
+                File renamedFile = new File(imgDir, eventName + ".jpeg");
+                ImageFile.renameTo(renamedFile);
+            }
+
 
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(newEvent);
             realm.commitTransaction();
-
             finish();
+            EventListActivity_.intent(this).start();
+
         } else {
             Toast.makeText(this, "Event already exists", Toast.LENGTH_SHORT).show();
         }
         realm.close();
     }
     public void onDestroy(){
-        if (!realm.isClosed()){
+
+        if (realm != null && realm.isClosed()){
             realm.close();
         }
         super.onDestroy();

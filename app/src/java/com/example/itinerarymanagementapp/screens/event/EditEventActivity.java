@@ -36,6 +36,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 import io.realm.Realm;
@@ -117,6 +118,7 @@ public class EditEventActivity extends AppCompatActivity {
         File loadImage = new File(dir, event.getEventName() + ".jpeg");
         Picasso.get()
                 .load(loadImage)
+                .error(android.R.drawable.ic_menu_my_calendar)
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(imageView5);
@@ -126,10 +128,11 @@ public class EditEventActivity extends AppCompatActivity {
         cancelEditEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ImageFile.exists()){
+                if (ImageFile != null){
                     ImageFile.delete();
                 }
                 finish();
+                EventListActivity_.intent(EditEventActivity.this).start();
             }
         });
 
@@ -151,8 +154,8 @@ public class EditEventActivity extends AppCompatActivity {
                 .withPermissions(
                         Manifest.permission.READ_MEDIA_IMAGES,
                         Manifest.permission.READ_MEDIA_VIDEO,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                        Manifest.permission.READ_EXTERNAL_STORAGE,
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.CAMERA
                 ).withListener(new BaseMultiplePermissionsListener(){
                     @Override
@@ -264,6 +267,14 @@ public class EditEventActivity extends AppCompatActivity {
         String eventDate = editTextDate2.getText().toString().trim();
         String eventCategory = editEventCategory2.getText().toString().trim();
 
+        HashMap<String, String> eventValues = new HashMap<>();
+        eventValues.put("name", eventName);
+        eventValues.put("description", eventDescription);
+        eventValues.put("time", eventTime);
+        eventValues.put("date", eventDate);
+        eventValues.put("category", eventCategory);
+
+
         if (eventName.equals("")){
             Toast.makeText(this, "Event name cannot be blank", Toast.LENGTH_SHORT).show();
             return;
@@ -283,55 +294,66 @@ public class EditEventActivity extends AppCompatActivity {
 
         //Event Category Validation
         eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
-        if (!event1.isValid()){
+        if (event1 == null){
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();
             newCategory.setName(eventCategory.toLowerCase());
             newCategory.setUuid(uuid);
+            realm.beginTransaction();
             realm.copyToRealmOrUpdate(newCategory);
             realm.commitTransaction();
         }
 
+        String sname = event.getEventName();
         //Event Entity Validation
-        RealmResults<Event> results = realm.where(Event.class).equalTo("name",
+        RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
                 eventName).findAll();
 
+        SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
+        String tripUUID = store.getString("tripUUID", "");
+        Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
+
+        // Checks if Name is not edited OR Name is new
         if (results.isEmpty()){
-            //Get The trip that the event belongs to
-            SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
-            String tripUUID = store.getString("tripUUID", "");
-            Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
-
-            //Edit the Event entity
-            event.setEventName(eventName);
-            event.setEventDescription(eventDescription);
-            event.setTripNameReference(trip.getTripName());
-            event.setCategory(eventCategory.toLowerCase());
-            event.setTimeRange(eventDate + "|||" + eventTime);
-
-            //Re-configure the Image File
-
-            File imgDir = getExternalCacheDir();
-            File renamedFile = new File(imgDir, eventName + ".jpeg");
-
-            if (!ImageFile.exists()){
-                //If no new image, but event information changed
-                loadedFile.renameTo(renamedFile);
-            } else {
-                //If there is a new image with information change or not
-                loadedFile.delete();
-                ImageFile.renameTo(renamedFile);
-            }
-
-            realm.beginTransaction();
-            realm.copyToRealmOrUpdate(event);
-            realm.commitTransaction();
-
-            realm.close();
+            saveEventEditToRealm(trip, eventValues);
             finish();
-        } else {
+            EventListActivity_.intent(this).start();
+        } else if( results.get(0).getEventName().equals(sname) ){
+            saveEventEditToRealm(trip, eventValues);
+            finish();
+            EventListActivity_.intent(this).start();
+        } else if (!results.get(0).getEventName().equals(sname)){
             Toast.makeText(this, "An event with this name already exists", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void saveEventEditToRealm(Trip trip, HashMap<String, String> eventValues){
+        //Edit the Event entity
+        realm.beginTransaction();
+        event.setEventName( eventValues.get("name") );
+        event.setEventDescription( eventValues.get("description") );
+        event.setTripNameReference( trip.getTripName() );
+        event.setCategory( eventValues.get("category").toLowerCase() );
+        event.setTimeRange( eventValues.get("date") + "|||" + eventValues.get("time"));
+        realm.copyToRealmOrUpdate(event);
+        realm.commitTransaction();
+        //Re-configure the Image File
+
+        File imgDir = getExternalCacheDir();
+        File renamedFile = new File(imgDir, eventValues.get("name") + ".jpeg");
+        if (ImageFile == null){
+            //If no new image, but event information changed
+            loadedFile.renameTo(renamedFile);
+        } else {
+            //If there is a new image with information change or not
+            loadedFile.delete();
+            ImageFile.renameTo(renamedFile);
+        }
+
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(event);
+        realm.commitTransaction();
+        realm.close();
     }
 
     public void onDestroy(){

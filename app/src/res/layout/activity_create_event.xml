@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#090808"
     tools:context=".screens.event.CreateEventActivity">
+
 
     <TextView
         android:id="@+id/textView5"
@@ -12,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Create Event"
+        android:textColor="#F6F1F1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +38,9 @@
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Event Name"
         android:inputType="text"
-        android:text="Event Name"
+        android:textColorHint="#A19999"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +52,9 @@
         android:layout_height="47dp"
         android:layout_marginBottom="228dp"
         android:ems="10"
+        android:hint="Event Category"
         android:inputType="text"
-        android:text="Event Category"
+        android:textColorHint="#A19999"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -59,13 +64,16 @@
 
     <EditText
         android:id="@+id/editEventDescription"
-        android:layout_width="213dp"
-        android:layout_height="83dp"
+        android:layout_width="266dp"
+        android:layout_height="96dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/box_drawing"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="5dp"
+        android:textColor="#020202"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Event Description"
-        android:textColor="#131010"
+        android:textColor="#F6F3F3"
         android:textColorHighlight="#131212"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,24 +97,25 @@
         android:id="@+id/createEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
         android:text="Create"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEventDescription" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelEvent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cancelEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="24dp"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createEvent"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintTop_toBottomOf="@+id/editEventDescription"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -124,7 +133,7 @@
         android:id="@+id/editTextDate"
         android:layout_width="98dp"
         android:layout_height="57dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="date"
@@ -140,19 +149,20 @@
         android:ems="10"
         android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toEndOf="@+id/editTextDate2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextDate"
         app:layout_constraintTop_toBottomOf="@+id/datetimeview" />
 
     <TextView
         android:id="@+id/datetimeview"
         android:layout_width="95dp"
         android:layout_height="23dp"
-        android:layout_marginStart="112dp"
         android:layout_marginTop="20dp"
         android:text="Date &amp; Time"
-        android:textColor="#0E0C0C"
+        android:textColor="#F4F1F1"
         android:textColorHighlight="#020202"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEventCategory" />
 

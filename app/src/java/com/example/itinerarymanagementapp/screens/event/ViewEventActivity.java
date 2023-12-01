@@ -3,6 +3,7 @@ package com.example.itinerarymanagementapp.screens.event;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,6 +25,7 @@ import io.realm.Realm;
 
 @EActivity
 public class ViewEventActivity extends AppCompatActivity {
+
     @Extra
     String uuid;
 
@@ -56,16 +58,22 @@ public class ViewEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_event);
 
         realm = Realm.getDefaultInstance();
-        Event event = realm.where(Event.class).contains("eventName", uuid).findFirst();
+        Event event = realm.where(Event.class).contains("uuid", uuid).findFirst();
         viewEventName.setText(event.getEventName());
         viewEventDescription.setText(event.getEventDescription());
-        viewEventCategory.setText(event.getCategory());
-        viewEventTime.setText(event.getTimeRange());
+        viewEventCategory.setText("Category: " + event.getCategory());
+
+        //Parsing Event Date and Event Time
+        String eventTimeRange = event.getTimeRange();
+        String newRange = eventTimeRange.replace("|||", ", ");
+
+        viewEventTime.setText(newRange);
 
         viewEventBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+                EventListActivity_.intent(ViewEventActivity.this).start();
             }
         });
 
@@ -79,8 +87,14 @@ public class ViewEventActivity extends AppCompatActivity {
 
         File imgDir = getExternalCacheDir();
         File eventFile = new File(imgDir, event.getEventName() + ".jpeg");
+
+//        if (!eventFile.isFile()){
+//            imageView2.setImageResource(android.R.drawable.ic_menu_my_calendar);
+//        }
+        Log.d("GaelLogs", eventFile.getPath());
         Picasso.get()
                 .load(eventFile)
+                .placeholder(android.R.drawable.ic_menu_my_calendar)
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(imageView2);

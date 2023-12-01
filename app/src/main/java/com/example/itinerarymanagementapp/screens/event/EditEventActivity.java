@@ -36,6 +36,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 import io.realm.Realm;
@@ -264,6 +265,14 @@ public class EditEventActivity extends AppCompatActivity {
         String eventDate = editTextDate2.getText().toString().trim();
         String eventCategory = editEventCategory2.getText().toString().trim();
 
+        HashMap<String, String> eventValues = new HashMap<>();
+        eventValues.put("name", eventName);
+        eventValues.put("description", eventDescription);
+        eventValues.put("time", eventTime);
+        eventValues.put("date", eventDate);
+        eventValues.put("category", eventCategory);
+
+
         if (eventName.equals("")){
             Toast.makeText(this, "Event name cannot be blank", Toast.LENGTH_SHORT).show();
             return;
@@ -297,46 +306,50 @@ public class EditEventActivity extends AppCompatActivity {
         //Event Entity Validation
         RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
                 eventName).findAll();
+
+        SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
+        String tripUUID = store.getString("tripUUID", "");
+        Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
+
         // Checks if Name is not edited OR Name is new
-        if ((!results.isEmpty() && results.get(0).getEventName().equals(sname)) || (results.isEmpty())){
-            //Get The trip that the event belongs to
-            SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
-            String tripUUID = store.getString("tripUUID", "");
-            Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
-
-            //Edit the Event entity
-            realm.beginTransaction();
-            event.setEventName(eventName);
-            event.setEventDescription(eventDescription);
-            event.setTripNameReference(trip.getTripName());
-            event.setCategory(eventCategory.toLowerCase());
-            event.setTimeRange(eventDate + "|||" + eventTime);
-            realm.copyToRealmOrUpdate(event);
-            realm.commitTransaction();
-            //Re-configure the Image File
-
-            File imgDir = getExternalCacheDir();
-            File renamedFile = new File(imgDir, eventName + ".jpeg");
-            if (ImageFile == null){
-                //If no new image, but event information changed
-                loadedFile.renameTo(renamedFile);
-            } else {
-                //If there is a new image with information change or not
-                loadedFile.delete();
-                ImageFile.renameTo(renamedFile);
-            }
-
-            realm.beginTransaction();
-            realm.copyToRealmOrUpdate(event);
-            realm.commitTransaction();
-
-            realm.close();
+        if (results.isEmpty()){
+            saveEventEditToRealm(trip, eventValues);
             finish();
-        } else if (!results.isEmpty() && !results.get(0).getEventName().equals(sname)){
+        } else if( results.get(0).getEventName().equals(sname) ){
+            saveEventEditToRealm(trip, eventValues);
+            finish();
+        } else if (!results.get(0).getEventName().equals(sname)){
             Toast.makeText(this, "An event with this name already exists", Toast.LENGTH_SHORT).show();
-        } else {
-
         }
+    }
+
+    private void saveEventEditToRealm(Trip trip, HashMap<String, String> eventValues){
+        //Edit the Event entity
+        realm.beginTransaction();
+        event.setEventName( eventValues.get("name") );
+        event.setEventDescription( eventValues.get("description") );
+        event.setTripNameReference( trip.getTripName() );
+        event.setCategory( eventValues.get("category").toLowerCase() );
+        event.setTimeRange( eventValues.get("date") + "|||" + eventValues.get("time"));
+        realm.copyToRealmOrUpdate(event);
+        realm.commitTransaction();
+        //Re-configure the Image File
+
+        File imgDir = getExternalCacheDir();
+        File renamedFile = new File(imgDir, eventValues.get("name") + ".jpeg");
+        if (ImageFile == null){
+            //If no new image, but event information changed
+            loadedFile.renameTo(renamedFile);
+        } else {
+            //If there is a new image with information change or not
+            loadedFile.delete();
+            ImageFile.renameTo(renamedFile);
+        }
+
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(event);
+        realm.commitTransaction();
+        realm.close();
     }
 
     public void onDestroy(){

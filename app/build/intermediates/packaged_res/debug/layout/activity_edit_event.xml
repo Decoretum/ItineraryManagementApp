@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0B0A0A"
     tools:context=".screens.event.EditEventActivity">
 
 
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Edit Event"
+        android:textColor="#F4EDED"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -39,6 +41,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Event Name"
+        android:textColor="#F4F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +55,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Event Category"
+        android:textColor="#F4F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,13 +63,16 @@
 
     <EditText
         android:id="@+id/editEventDescription2"
-        android:layout_width="213dp"
-        android:layout_height="83dp"
+        android:layout_width="260dp"
+        android:layout_height="102dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/box_drawing"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:textColor="#0E0D0D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,13 +82,13 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="Event Description"
-        android:textColor="#131010"
+        android:textColor="#F4EEEE"
         android:textColorHighlight="#131212"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintHorizontal_bias="0.236"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
@@ -89,23 +96,25 @@
         android:id="@+id/editEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
         android:text="Create"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEventDescription2" />
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelEditEvent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cancelEditEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="24dp"
         android:text="Cancel"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEvent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -123,22 +132,24 @@
         android:id="@+id/editTextDate2"
         android:layout_width="98dp"
         android:layout_height="57dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="date"
+        android:textColor="#F8F6F6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datetimeview" />
 
     <EditText
         android:id="@+id/editTextTime2"
-        android:layout_width="134dp"
-        android:layout_height="57dp"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="time"
+        android:textColor="#F8F6F6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toEndOf="@+id/editTextDate2"
         app:layout_constraintTop_toBottomOf="@+id/datetimeview" />
 
@@ -146,10 +157,10 @@
         android:id="@+id/datetimeview"
         android:layout_width="95dp"
         android:layout_height="23dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
         android:text="Date &amp; Time"
-        android:textColor="#0E0C0C"
+        android:textColor="#F4EDED"
         android:textColorHighlight="#020202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEventCategory2" />

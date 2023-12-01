@@ -59,7 +59,6 @@ public class ViewTripActivity extends AppCompatActivity {
     public void checkTripEventsBtn(){
         Intent intent = new Intent(this, EventListActivity_.class);
         startActivity(intent);
-        finish();
     }
 
     @Click

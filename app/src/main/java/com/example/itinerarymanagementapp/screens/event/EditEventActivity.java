@@ -118,6 +118,7 @@ public class EditEventActivity extends AppCompatActivity {
         File loadImage = new File(dir, event.getEventName() + ".jpeg");
         Picasso.get()
                 .load(loadImage)
+                .error(android.R.drawable.ic_menu_my_calendar)
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(imageView5);
@@ -131,6 +132,7 @@ public class EditEventActivity extends AppCompatActivity {
                     ImageFile.delete();
                 }
                 finish();
+                EventListActivity_.intent(EditEventActivity.this).start();
             }
         });
 
@@ -291,8 +293,8 @@ public class EditEventActivity extends AppCompatActivity {
         }
 
         //Event Category Validation
-        com.example.itinerarymanagementapp.models.eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
-        if (!(event1 == null)){
+        eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
+        if (event1 == null){
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();
             newCategory.setName(eventCategory.toLowerCase());
@@ -315,9 +317,11 @@ public class EditEventActivity extends AppCompatActivity {
         if (results.isEmpty()){
             saveEventEditToRealm(trip, eventValues);
             finish();
+            EventListActivity_.intent(this).start();
         } else if( results.get(0).getEventName().equals(sname) ){
             saveEventEditToRealm(trip, eventValues);
             finish();
+            EventListActivity_.intent(this).start();
         } else if (!results.get(0).getEventName().equals(sname)){
             Toast.makeText(this, "An event with this name already exists", Toast.LENGTH_SHORT).show();
         }

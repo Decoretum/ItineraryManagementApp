@@ -65,13 +65,17 @@ public class EventAdapter extends RealmRecyclerViewAdapter<Event, EventAdapter.V
             File eventFile = new File(imageDir, event.getEventName() + ".jpeg");
             Picasso.get()
                     .load(eventFile)
+                    .placeholder(android.R.drawable.ic_menu_my_calendar)
                     .networkPolicy(NetworkPolicy.NO_CACHE)
                     .memoryPolicy(MemoryPolicy.NO_CACHE)
                     .into(viewHolder.imageView);
 
             viewHolder.eventName.setText(event.getEventName());
             viewHolder.category.setText(event.getCategory());
-            viewHolder.timeRange.setText(event.getTimeRange());
+
+            String timeRange = event.getTimeRange();
+            String newRange = timeRange.replace("|||", ", ");
+            viewHolder.timeRange.setText(newRange);
 
             viewHolder.deleteEventButton.setOnClickListener(new View.OnClickListener() {
                 @Override

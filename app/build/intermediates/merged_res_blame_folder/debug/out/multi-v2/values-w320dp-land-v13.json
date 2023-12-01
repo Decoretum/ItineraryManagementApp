@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.itinerarymanagementapp-mergeDebugResources-2:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.example.itinerarymanagementapp-mergeDebugResources-31:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "E:\\GRADLE\\caches\\transforms-3\\29487b7b575731628d833e95a4f3097c\\transformed\\material-1.10.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "/Users/Gamadan/.gradle/caches/transforms-3/29487b7b575731628d833e95a4f3097c/transformed/material-1.10.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

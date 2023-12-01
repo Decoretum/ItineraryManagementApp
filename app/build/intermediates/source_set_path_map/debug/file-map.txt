@@ -1,36 +1,36 @@
-com.example.itinerarymanagementapp-pngs-0 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\build\generated\res\pngs\debug
-com.example.itinerarymanagementapp-resValues-1 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\build\generated\res\resValues\debug
-com.example.itinerarymanagementapp-packageDebugResources-2 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.itinerarymanagementapp-packageDebugResources-3 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.itinerarymanagementapp-merged_res-4 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\build\intermediates\merged_res\debug
-com.example.itinerarymanagementapp-debug-5 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\src\debug\res
-com.example.itinerarymanagementapp-main-6 E:\Documents\ACADS\5th Year\1st Semester\Android\Final Project\Main\ItineraryManagementApp\app\src\main\res
-com.example.itinerarymanagementapp-fragment-1.3.6-7 E:\GRADLE\caches\transforms-3\0df68c3220126c0b0628193388e55405\transformed\fragment-1.3.6\res
-com.example.itinerarymanagementapp-core-1.9.0-8 E:\GRADLE\caches\transforms-3\0eb4617d1b1946e366db6e234aecdc6e\transformed\core-1.9.0\res
-com.example.itinerarymanagementapp-transition-1.2.0-9 E:\GRADLE\caches\transforms-3\1b498ceaddf92c3c47f0ebb641c3ccf3\transformed\transition-1.2.0\res
-com.example.itinerarymanagementapp-material-1.10.0-10 E:\GRADLE\caches\transforms-3\29487b7b575731628d833e95a4f3097c\transformed\material-1.10.0\res
-com.example.itinerarymanagementapp-startup-runtime-1.1.1-11 E:\GRADLE\caches\transforms-3\2fd06d46e295e39af299a43245f14704\transformed\startup-runtime-1.1.1\res
-com.example.itinerarymanagementapp-dexter-6.2.1-12 E:\GRADLE\caches\transforms-3\32f43c95595e14af1a2f69178ce29467\transformed\dexter-6.2.1\res
-com.example.itinerarymanagementapp-Android-Image-Cropper-release-13 E:\GRADLE\caches\transforms-3\3467b966172fab6b27196955c84ff030\transformed\Android-Image-Cropper-release\res
-com.example.itinerarymanagementapp-drawerlayout-1.1.1-14 E:\GRADLE\caches\transforms-3\38a67a392916dd0dce2acf8dc5d9921a\transformed\drawerlayout-1.1.1\res
-com.example.itinerarymanagementapp-lifecycle-livedata-core-2.6.1-15 E:\GRADLE\caches\transforms-3\394be647ac54bb37cd45462de018dd28\transformed\lifecycle-livedata-core-2.6.1\res
-com.example.itinerarymanagementapp-core-ktx-1.9.0-16 E:\GRADLE\caches\transforms-3\49a41ae5cc8cc2d797e97fc0b306071d\transformed\core-ktx-1.9.0\res
-com.example.itinerarymanagementapp-cardview-1.0.0-17 E:\GRADLE\caches\transforms-3\4e7b1c746fee5a68d012ebb5770e4f85\transformed\cardview-1.0.0\res
-com.example.itinerarymanagementapp-lifecycle-viewmodel-savedstate-2.6.1-18 E:\GRADLE\caches\transforms-3\510f4619bb5e137bd55ead7158d1223e\transformed\lifecycle-viewmodel-savedstate-2.6.1\res
-com.example.itinerarymanagementapp-savedstate-1.2.1-19 E:\GRADLE\caches\transforms-3\59dfc1b744ebe4d0c3571be3d998e4b4\transformed\savedstate-1.2.1\res
-com.example.itinerarymanagementapp-coordinatorlayout-1.1.0-20 E:\GRADLE\caches\transforms-3\644c5ef8829285c5d0ce40310b28d683\transformed\coordinatorlayout-1.1.0\res
-com.example.itinerarymanagementapp-appcompat-1.6.1-21 E:\GRADLE\caches\transforms-3\6c80ae39464c58c09a6ce8eeac754c22\transformed\appcompat-1.6.1\res
-com.example.itinerarymanagementapp-lifecycle-livedata-2.6.1-22 E:\GRADLE\caches\transforms-3\6f55f0e29cfe79dcce1af9cf9a3409c2\transformed\lifecycle-livedata-2.6.1\res
-com.example.itinerarymanagementapp-activity-1.8.0-23 E:\GRADLE\caches\transforms-3\7026d3f8af43bff2c9e4e69e6f99f4d1\transformed\activity-1.8.0\res
-com.example.itinerarymanagementapp-emoji2-views-helper-1.2.0-24 E:\GRADLE\caches\transforms-3\72bc63591d90401cb003fb23f9bfab55\transformed\emoji2-views-helper-1.2.0\res
-com.example.itinerarymanagementapp-core-runtime-2.2.0-25 E:\GRADLE\caches\transforms-3\73c37b49451853a5b3cd079698b10198\transformed\core-runtime-2.2.0\res
-com.example.itinerarymanagementapp-viewpager2-1.0.0-26 E:\GRADLE\caches\transforms-3\75907e244f702cde38acb8800f0666fb\transformed\viewpager2-1.0.0\res
-com.example.itinerarymanagementapp-recyclerview-1.1.0-27 E:\GRADLE\caches\transforms-3\7c069cf0c34fe79d13b9b56e815a1b4f\transformed\recyclerview-1.1.0\res
-com.example.itinerarymanagementapp-constraintlayout-2.1.4-28 E:\GRADLE\caches\transforms-3\895752b72fba505bdc6a707756d64eab\transformed\constraintlayout-2.1.4\res
-com.example.itinerarymanagementapp-annotation-experimental-1.3.0-29 E:\GRADLE\caches\transforms-3\94238751bc3d8f98cd9a760d36ba3bb2\transformed\annotation-experimental-1.3.0\res
-com.example.itinerarymanagementapp-appcompat-resources-1.6.1-30 E:\GRADLE\caches\transforms-3\947ebb9ab2afac26df299132a3366d92\transformed\appcompat-resources-1.6.1\res
-com.example.itinerarymanagementapp-lifecycle-runtime-2.6.1-31 E:\GRADLE\caches\transforms-3\b17b544b9adf434c51cc58161ce493e9\transformed\lifecycle-runtime-2.6.1\res
-com.example.itinerarymanagementapp-lifecycle-viewmodel-2.6.1-32 E:\GRADLE\caches\transforms-3\f396f684faaf0ba4dc6e3ac2c4eecea6\transformed\lifecycle-viewmodel-2.6.1\res
-com.example.itinerarymanagementapp-lifecycle-process-2.6.1-33 E:\GRADLE\caches\transforms-3\f3d2384a4cf629502ea69cfb32f52569\transformed\lifecycle-process-2.6.1\res
-com.example.itinerarymanagementapp-emoji2-1.2.0-34 E:\GRADLE\caches\transforms-3\f6cf4b7fdb467088833ea40eac6ee507\transformed\emoji2-1.2.0\res
-com.example.itinerarymanagementapp-profileinstaller-1.3.0-35 E:\GRADLE\caches\transforms-3\fb2c4937c6e0d20dcd4991ec0c27f313\transformed\profileinstaller-1.3.0\res
+com.example.itinerarymanagementapp-fragment-1.3.6-0 /Users/Gamadan/.gradle/caches/transforms-3/0df68c3220126c0b0628193388e55405/transformed/fragment-1.3.6/res
+com.example.itinerarymanagementapp-core-1.9.0-1 /Users/Gamadan/.gradle/caches/transforms-3/0eb4617d1b1946e366db6e234aecdc6e/transformed/core-1.9.0/res
+com.example.itinerarymanagementapp-transition-1.2.0-2 /Users/Gamadan/.gradle/caches/transforms-3/1b498ceaddf92c3c47f0ebb641c3ccf3/transformed/transition-1.2.0/res
+com.example.itinerarymanagementapp-material-1.10.0-3 /Users/Gamadan/.gradle/caches/transforms-3/29487b7b575731628d833e95a4f3097c/transformed/material-1.10.0/res
+com.example.itinerarymanagementapp-startup-runtime-1.1.1-4 /Users/Gamadan/.gradle/caches/transforms-3/2fd06d46e295e39af299a43245f14704/transformed/startup-runtime-1.1.1/res
+com.example.itinerarymanagementapp-dexter-6.2.1-5 /Users/Gamadan/.gradle/caches/transforms-3/32f43c95595e14af1a2f69178ce29467/transformed/dexter-6.2.1/res
+com.example.itinerarymanagementapp-Android-Image-Cropper-release-6 /Users/Gamadan/.gradle/caches/transforms-3/3467b966172fab6b27196955c84ff030/transformed/Android-Image-Cropper-release/res
+com.example.itinerarymanagementapp-drawerlayout-1.1.1-7 /Users/Gamadan/.gradle/caches/transforms-3/38a67a392916dd0dce2acf8dc5d9921a/transformed/drawerlayout-1.1.1/res
+com.example.itinerarymanagementapp-lifecycle-livedata-core-2.6.1-8 /Users/Gamadan/.gradle/caches/transforms-3/394be647ac54bb37cd45462de018dd28/transformed/lifecycle-livedata-core-2.6.1/res
+com.example.itinerarymanagementapp-core-ktx-1.9.0-9 /Users/Gamadan/.gradle/caches/transforms-3/49a41ae5cc8cc2d797e97fc0b306071d/transformed/core-ktx-1.9.0/res
+com.example.itinerarymanagementapp-cardview-1.0.0-10 /Users/Gamadan/.gradle/caches/transforms-3/4e7b1c746fee5a68d012ebb5770e4f85/transformed/cardview-1.0.0/res
+com.example.itinerarymanagementapp-lifecycle-viewmodel-savedstate-2.6.1-11 /Users/Gamadan/.gradle/caches/transforms-3/510f4619bb5e137bd55ead7158d1223e/transformed/lifecycle-viewmodel-savedstate-2.6.1/res
+com.example.itinerarymanagementapp-savedstate-1.2.1-12 /Users/Gamadan/.gradle/caches/transforms-3/59dfc1b744ebe4d0c3571be3d998e4b4/transformed/savedstate-1.2.1/res
+com.example.itinerarymanagementapp-coordinatorlayout-1.1.0-13 /Users/Gamadan/.gradle/caches/transforms-3/644c5ef8829285c5d0ce40310b28d683/transformed/coordinatorlayout-1.1.0/res
+com.example.itinerarymanagementapp-appcompat-1.6.1-14 /Users/Gamadan/.gradle/caches/transforms-3/6c80ae39464c58c09a6ce8eeac754c22/transformed/appcompat-1.6.1/res
+com.example.itinerarymanagementapp-lifecycle-livedata-2.6.1-15 /Users/Gamadan/.gradle/caches/transforms-3/6f55f0e29cfe79dcce1af9cf9a3409c2/transformed/lifecycle-livedata-2.6.1/res
+com.example.itinerarymanagementapp-activity-1.8.0-16 /Users/Gamadan/.gradle/caches/transforms-3/7026d3f8af43bff2c9e4e69e6f99f4d1/transformed/activity-1.8.0/res
+com.example.itinerarymanagementapp-emoji2-views-helper-1.2.0-17 /Users/Gamadan/.gradle/caches/transforms-3/72bc63591d90401cb003fb23f9bfab55/transformed/emoji2-views-helper-1.2.0/res
+com.example.itinerarymanagementapp-core-runtime-2.2.0-18 /Users/Gamadan/.gradle/caches/transforms-3/73c37b49451853a5b3cd079698b10198/transformed/core-runtime-2.2.0/res
+com.example.itinerarymanagementapp-viewpager2-1.0.0-19 /Users/Gamadan/.gradle/caches/transforms-3/75907e244f702cde38acb8800f0666fb/transformed/viewpager2-1.0.0/res
+com.example.itinerarymanagementapp-recyclerview-1.1.0-20 /Users/Gamadan/.gradle/caches/transforms-3/7c069cf0c34fe79d13b9b56e815a1b4f/transformed/recyclerview-1.1.0/res
+com.example.itinerarymanagementapp-constraintlayout-2.1.4-21 /Users/Gamadan/.gradle/caches/transforms-3/895752b72fba505bdc6a707756d64eab/transformed/constraintlayout-2.1.4/res
+com.example.itinerarymanagementapp-annotation-experimental-1.3.0-22 /Users/Gamadan/.gradle/caches/transforms-3/94238751bc3d8f98cd9a760d36ba3bb2/transformed/annotation-experimental-1.3.0/res
+com.example.itinerarymanagementapp-appcompat-resources-1.6.1-23 /Users/Gamadan/.gradle/caches/transforms-3/947ebb9ab2afac26df299132a3366d92/transformed/appcompat-resources-1.6.1/res
+com.example.itinerarymanagementapp-lifecycle-runtime-2.6.1-24 /Users/Gamadan/.gradle/caches/transforms-3/b17b544b9adf434c51cc58161ce493e9/transformed/lifecycle-runtime-2.6.1/res
+com.example.itinerarymanagementapp-lifecycle-viewmodel-2.6.1-25 /Users/Gamadan/.gradle/caches/transforms-3/f396f684faaf0ba4dc6e3ac2c4eecea6/transformed/lifecycle-viewmodel-2.6.1/res
+com.example.itinerarymanagementapp-lifecycle-process-2.6.1-26 /Users/Gamadan/.gradle/caches/transforms-3/f3d2384a4cf629502ea69cfb32f52569/transformed/lifecycle-process-2.6.1/res
+com.example.itinerarymanagementapp-emoji2-1.2.0-27 /Users/Gamadan/.gradle/caches/transforms-3/f6cf4b7fdb467088833ea40eac6ee507/transformed/emoji2-1.2.0/res
+com.example.itinerarymanagementapp-profileinstaller-1.3.0-28 /Users/Gamadan/.gradle/caches/transforms-3/fb2c4937c6e0d20dcd4991ec0c27f313/transformed/profileinstaller-1.3.0/res
+com.example.itinerarymanagementapp-pngs-29 /Users/Gamadan/Desktop/ItineraryManagementApp/app/build/generated/res/pngs/debug
+com.example.itinerarymanagementapp-resValues-30 /Users/Gamadan/Desktop/ItineraryManagementApp/app/build/generated/res/resValues/debug
+com.example.itinerarymanagementapp-packageDebugResources-31 /Users/Gamadan/Desktop/ItineraryManagementApp/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.itinerarymanagementapp-packageDebugResources-32 /Users/Gamadan/Desktop/ItineraryManagementApp/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.itinerarymanagementapp-merged_res-33 /Users/Gamadan/Desktop/ItineraryManagementApp/app/build/intermediates/merged_res/debug
+com.example.itinerarymanagementapp-debug-34 /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/debug/res
+com.example.itinerarymanagementapp-main-35 /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/res

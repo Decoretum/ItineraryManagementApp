@@ -10,10 +10,11 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="36dp"
         android:text="Edit Event"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,15 +47,14 @@
         android:id="@+id/editEventCategory2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="text"
         android:text="Event Category"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintTop_toBottomOf="@+id/editEventName2" />
 
     <EditText
         android:id="@+id/editEventDescription2"
@@ -74,14 +74,15 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="Event Description"
         android:textColor="#131010"
         android:textColorHighlight="#131212"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="468dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
     <Button
         android:id="@+id/editEvent"
@@ -132,13 +133,13 @@
         android:id="@+id/editTextTime2"
         android:layout_width="134dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toEndOf="@+id/editTextDate2" />
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toEndOf="@+id/editTextDate2"
+        app:layout_constraintTop_toBottomOf="@+id/datetimeview" />
 
     <TextView
         android:id="@+id/datetimeview"

@@ -1,2 +1,2 @@
-00:41:02.938 [Execution worker Thread 3] WARN  o.a.i.h.AndroidManifestFinder:514 - A class activity declared in the AndroidManifest.xml cannot be found in the compile path: [androidx.profileinstaller.ProfileInstallReceiver]
-00:41:02.941 [Execution worker Thread 3] WARN  o.a.i.h.AndroidManifestFinder:514 - A class activity declared in the AndroidManifest.xml cannot be found in the compile path: [androidx.startup.InitializationProvider]
+13:53:15.41 [Execution worker Thread 3] WARN  o.a.i.h.AndroidManifestFinder:514 - A class activity declared in the AndroidManifest.xml cannot be found in the compile path: [androidx.profileinstaller.ProfileInstallReceiver]
+13:53:15.49 [Execution worker Thread 3] WARN  o.a.i.h.AndroidManifestFinder:514 - A class activity declared in the AndroidManifest.xml cannot be found in the compile path: [androidx.startup.InitializationProvider]

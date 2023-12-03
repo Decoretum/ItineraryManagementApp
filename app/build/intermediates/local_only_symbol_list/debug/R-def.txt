@@ -5,6 +5,7 @@ array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
 color black
+color new_icon_background
 color purple_200
 color purple_500
 color purple_700
@@ -14,6 +15,7 @@ color white
 drawable box_drawing
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable new_icon_foreground
 drawable rounded_button
 font amiko
 id addTripBtn
@@ -152,6 +154,8 @@ layout trip_row
 layout user_row_layout
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap new_icon
+mipmap new_icon_round
 string app_name
 string fileAuthority
 style Theme.ItineraryManagementApp

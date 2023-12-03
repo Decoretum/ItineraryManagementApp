@@ -127,7 +127,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/Gamadan/.gradle/cach
 	tools:targetApi
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:25:9-29
 	android:icon
-		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:20:9-43
+		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:20:9-40
 	android:allowBackup
 		ADDED from /Users/Gamadan/Desktop/ItineraryManagementApp/app/src/main/AndroidManifest.xml:17:9-35
 	android:theme

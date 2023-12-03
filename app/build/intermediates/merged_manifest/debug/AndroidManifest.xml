@@ -95,6 +95,11 @@
         </provider>
 
         <activity android:name="com.example.itinerarymanagementapp.ImageActivity_" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name="com.karumi.dexter.DexterActivity"
             android:theme="@style/Dexter.Internal.Theme.Transparent" />

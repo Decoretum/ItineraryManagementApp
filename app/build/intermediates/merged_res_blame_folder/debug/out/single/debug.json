@@ -24,12 +24,16 @@
         "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/layout/trip_row.xml"
     },
     {
+        "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/layout_activity_edit_user.xml.flat",
+        "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/layout/activity_edit_user.xml"
+    },
+    {
         "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/layout_activity_capture_image.xml.flat",
         "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/layout/activity_capture_image.xml"
     },
     {
-        "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/layout_activity_edit_user.xml.flat",
-        "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/layout/activity_edit_user.xml"
+        "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/font_amiko.xml.flat",
+        "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/font/amiko.xml"
     },
     {
         "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/mipmap-xxhdpi_ic_launcher_round.webp.flat",

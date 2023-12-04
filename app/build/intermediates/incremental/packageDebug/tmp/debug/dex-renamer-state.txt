@@ -1,7 +1,7 @@
-#Sun Dec 03 19:18:08 PST 2023
-base.0=/Users/Gamadan/Desktop/ItineraryManagementApp/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/Gamadan/Desktop/ItineraryManagementApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/Users/Gamadan/Desktop/ItineraryManagementApp/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+#Mon Dec 04 22:21:48 CST 2023
+base.0=E\:\\Documents\\ACADS\\5th Year\\1st Semester\\Android\\Final Project\\Main\\ItineraryManagementApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=E\:\\Documents\\ACADS\\5th Year\\1st Semester\\Android\\Final Project\\Main\\ItineraryManagementApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=E\:\\Documents\\ACADS\\5th Year\\1st Semester\\Android\\Final Project\\Main\\ItineraryManagementApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=classes2.dex

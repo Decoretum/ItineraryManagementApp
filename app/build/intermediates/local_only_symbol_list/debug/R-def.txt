@@ -34,7 +34,6 @@ id cancelUserEdit
 id capture
 id card_view
 id category
-id categoryFilterInput
 id checkTripEventsBtn
 id clearUser
 id clearUserPrefs

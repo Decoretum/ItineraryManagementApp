@@ -3212,7 +3212,6 @@ id capture
 id card_view
 id carryVelocity
 id category
-id categoryFilterInput
 id center
 id centerCrop
 id centerInside

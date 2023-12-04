@@ -12,11 +12,15 @@ import android.widget.Toast;
 
 import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Trip;
+import com.example.itinerarymanagementapp.models.eventCategory;
+import com.example.itinerarymanagementapp.models.tripCategory;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+
+import java.util.UUID;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -65,7 +69,7 @@ public class EditTripActivity extends AppCompatActivity {
     @Click
     public void saveTripEditBtn(){
         String tripName = editTripNameInput.getText().toString();
-        String tripCategory = editTripCategoryInput.getText().toString();
+        String tripCategoryInput = editTripCategoryInput.getText().toString();
         String tripDescription = editTripDescriptionInput.getText().toString();
         RealmResults<Trip> tripNamesData = realm.where(Trip.class)
                 .equalTo("tripName", tripName).findAll();
@@ -73,7 +77,7 @@ public class EditTripActivity extends AppCompatActivity {
             editTripNameInput.setText(trip.getTripName());
             blankInputToast("Name");
         }
-        else if(tripCategory.equals("")){
+        else if(tripCategoryInput.equals("")){
             editTripCategoryInput.setText(trip.getCategory());
             blankInputToast("Category");
         }
@@ -85,9 +89,21 @@ public class EditTripActivity extends AppCompatActivity {
             tripExistsToast();
         }
         else{
+            //Event Category Validation
+            tripCategory trip1 = realm.where(tripCategory.class).contains("name", tripCategoryInput).findFirst();
+            if (trip1 == null){
+                String uuid = UUID.randomUUID().toString();
+                tripCategory newCategory = new tripCategory();
+                newCategory.setName(tripCategoryInput.toLowerCase());
+                newCategory.setUuid(uuid);
+                realm.beginTransaction();
+                realm.copyToRealmOrUpdate(newCategory);
+                realm.commitTransaction();
+            }
+
             realm.beginTransaction();
             trip.setTripName(tripName);
-            trip.setCategory(tripCategory);
+            trip.setCategory(tripCategoryInput);
             trip.setDescription(tripDescription);
             realm.commitTransaction();
 

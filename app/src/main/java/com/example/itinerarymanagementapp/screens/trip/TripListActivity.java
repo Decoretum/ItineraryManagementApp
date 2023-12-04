@@ -8,17 +8,28 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.itinerarymanagementapp.R;
+import com.example.itinerarymanagementapp.adapters.EventAdapter;
+import com.example.itinerarymanagementapp.models.Event;
 import com.example.itinerarymanagementapp.models.Trip;
+import com.example.itinerarymanagementapp.models.eventCategory;
+import com.example.itinerarymanagementapp.models.tripCategory;
 import com.example.itinerarymanagementapp.screens.MainActivity_;
+import com.example.itinerarymanagementapp.screens.event.EventListActivity;
 
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+
+import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -30,32 +41,92 @@ public class TripListActivity extends AppCompatActivity {
     TextView tripTitle;
     @ViewById
     RecyclerView tripRecyclerView;
-    @ViewById
-    EditText categoryFilterInput;
+//    @ViewById
+//    EditText filterCategory;
     @ViewById
     Button addTripBtn;
     @ViewById
     Button tripListBackBtn;
+    @ViewById
+    Button applyFilterButton;
 
+    @ViewById
+    Spinner filterCategory;
+
+    public static String referenceUUID;
     Realm realm;
     SharedPreferences userPrefs;
     SharedPreferences tripPrefs;
     SharedPreferences.Editor userPrefsEditor;
     SharedPreferences.Editor tripPrefsEditor;
 
+    String UUID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_list);
+
+        applyFilterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                realm = Realm.getDefaultInstance();
+
+                if (filterCategory.getSelectedItem() == null){
+                    return;
+                }
+
+                String queriedCategory = filterCategory.getSelectedItem().toString();
+
+                if (!queriedCategory.equals("All Categories")){
+                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).equalTo("category", queriedCategory).findAll();
+                    TripAdapter tripAdapter = new TripAdapter(TripListActivity.this, queriedTrips, true);
+                    tripRecyclerView.setAdapter(tripAdapter);
+                } else {
+//                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).contains("category", queriedCategory).findAll();
+                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).equalTo("userUUID", UUID).findAll();
+                    TripAdapter tripAdapter = new TripAdapter(TripListActivity.this, queriedTrips, true);
+                    tripRecyclerView.setAdapter(tripAdapter);
+                }
+
+            }
+        });
+
+    }
+    @AfterViews
+    public void init(){
         realm = Realm.getDefaultInstance();
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mLayoutManager.setOrientation(RecyclerView.VERTICAL);
         tripRecyclerView.setLayoutManager(mLayoutManager);
 
+        //Spinner
+        RealmResults<tripCategory> tripCategories = realm.where(tripCategory.class).findAll();
+        ArrayList<String> categories = new ArrayList<>();
+        for (tripCategory i : tripCategories){
+            categories.add(i.getName());
+        }
+        categories.add("All Categories");
+
+        ArrayAdapter list = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
+
+        if (categories.isEmpty()){
+            for (tripCategory i : tripCategories){
+                categories.add(i.getName());
+            }
+            list.addAll(categories);
+        }
+
+        list.setNotifyOnChange(true);
+        list.notifyDataSetChanged();
+
+        list.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        filterCategory.setAdapter(list);
+
         userPrefs = getSharedPreferences("User", MODE_PRIVATE);
         userPrefsEditor = userPrefs.edit();
 
-        String UUID = userPrefs.getString("UUID", null);
+        UUID = userPrefs.getString("UUID", null);
 
         RealmResults<Trip> calledUUID = realm.where(Trip.class).equalTo("userUUID", UUID).findAll();
         TripAdapter tAdapter = new TripAdapter(this, calledUUID, true);

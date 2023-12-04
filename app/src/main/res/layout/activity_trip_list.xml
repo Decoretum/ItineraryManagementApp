@@ -50,17 +50,24 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/categoryFilterInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/tripRecyclerView"
+    <Button
+        android:id="@+id/applyFilterButton"
+        android:layout_width="41dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="64dp"
+        android:background="?android:attr/actionModeWebSearchDrawable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/filterCategory"
+        android:layout_width="199dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/tripRecyclerView"
+        app:layout_constraintEnd_toStartOf="@+id/applyFilterButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tripRecyclerView"
         app:layout_constraintTop_toBottomOf="@+id/tripTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

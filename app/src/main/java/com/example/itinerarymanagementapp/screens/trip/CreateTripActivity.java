@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Trip;
+import com.example.itinerarymanagementapp.models.eventCategory;
+import com.example.itinerarymanagementapp.models.tripCategory;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -89,6 +92,17 @@ public class CreateTripActivity extends AppCompatActivity {
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(trip);
             realm.commitTransaction();
+
+            tripCategory trip1 = realm.where(tripCategory.class).contains("name", tripCategoryInput).findFirst();
+            if (trip1 == null){
+                String uuid = UUID.randomUUID().toString();
+                tripCategory newCategory = new tripCategory();
+                newCategory.setName(tripCategoryInput.toLowerCase());
+                newCategory.setUuid(uuid);
+                realm.beginTransaction();
+                realm.copyToRealmOrUpdate(newCategory);
+                realm.commitTransaction();
+            }
 
             newTripSavedToast();
             Intent intent = new Intent(this, TripListActivity_.class);

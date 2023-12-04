@@ -293,7 +293,7 @@ public class EditEventActivity extends AppCompatActivity {
         }
 
         //Event Category Validation
-        eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory).findFirst();
+        eventCategory event1 = realm.where(eventCategory.class).contains("name", eventCategory.toLowerCase()).findFirst();
         if (event1 == null){
             String uuid = UUID.randomUUID().toString();
             eventCategory newCategory = new eventCategory();

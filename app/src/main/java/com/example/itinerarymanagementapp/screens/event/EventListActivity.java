@@ -66,7 +66,6 @@ public class EventListActivity extends AppCompatActivity {
         newEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
                 CreateEventActivity_.intent(EventListActivity.this).start();
             }
         });
@@ -108,10 +107,12 @@ public class EventListActivity extends AppCompatActivity {
         //Spinner
         RealmResults<eventCategory> eventCategories = realm.where(eventCategory.class).findAll();
         ArrayList<String> categories = new ArrayList<>();
+
+        categories.add("All Categories");
+
         for (eventCategory i : eventCategories){
             categories.add(i.getName());
         }
-        categories.add("All Categories");
 
         ArrayAdapter list = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
 

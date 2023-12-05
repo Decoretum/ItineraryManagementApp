@@ -81,6 +81,9 @@ public class CreateEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
+        //SharedPreferences store2 = getSharedPreferences("User", MODE_PRIVATE);
+        //Log.d("GaelLogs", store2.getString("UUID", null));
+
         cancelEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +106,6 @@ public class CreateEventActivity extends AppCompatActivity {
             }
         });
 
-//        imageButton = (ImageButton) findViewById(R.id.imageButton);
     }
 
 
@@ -246,30 +248,31 @@ public class CreateEventActivity extends AppCompatActivity {
             realm.commitTransaction();
         }
 
+        //Get The trip that the event belongs to
+        SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
+        SharedPreferences store2 = getSharedPreferences("User", MODE_PRIVATE);
+
+        String userUUID = store2.getString("UUID", null);
+        String tripUUID = store.getString("tripUUID", "");
+
+        Trip trip = realm.where(Trip.class).equalTo("uuid", tripUUID).equalTo("userUUID", userUUID).findFirst();
+
         //Event Entity Validation
-        RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
-                eventName).findAll();
+        RealmResults<Event> results = realm.where(Event.class).contains("eventName",
+                eventName).contains("tripUUID", trip.getUuid()).contains("userUUID", userUUID).findAll();
 
         if (results.isEmpty()){
-            //Get The trip that the event belongs to
-            SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
-            String tripUUID = store.getString("tripUUID", "");
-            Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
-
             //Create the Event entity
             String eventUUID = UUID.randomUUID().toString();
             Event newEvent = new Event();
+            newEvent.setUserUUID(userUUID);
             newEvent.setEventName(eventName);
             newEvent.setEventDescription(eventDescription);
-            newEvent.setTripNameReference(trip.getTripName());
+            newEvent.setTripUUID(trip.getUuid());
             newEvent.setUuid(eventUUID);
             newEvent.setCategory(eventCategory.toLowerCase());
             newEvent.setTimeRange(eventDate + "|||" + eventTime);
 
-            boolean hm = ImageFile == null;
-            if (hm == true){
-                Log.d("GaelLogs", "NULL");
-            }
             //Re-configure the Image File
             if (ImageFile != null){
                 File imgDir = getExternalCacheDir();

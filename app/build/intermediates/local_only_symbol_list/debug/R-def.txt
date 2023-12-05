@@ -20,6 +20,7 @@ drawable rounded_button
 font amiko
 id addTripBtn
 id admin
+id adminBackButton
 id applyFilterButton
 id backBtn
 id backButton

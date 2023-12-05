@@ -19,7 +19,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/new_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/new_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ItineraryManagementApp"
         tools:targetApi="31">

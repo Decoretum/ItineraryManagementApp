@@ -148,8 +148,11 @@ public class LoginActivity extends AppCompatActivity {
             User userLogin = realm.where(User.class).equalTo("uuid", userUuid)
                     .findFirst();
 
-            loginUsername.setText(userLogin.getUsername());
-            loginPassword.setText(userLogin.getPassword());
+            if (userLogin != null){
+                loginUsername.setText(userLogin.getUsername());
+                loginPassword.setText(userLogin.getPassword());
+            }
+
             rememberMe.setChecked(true);
         }
     }

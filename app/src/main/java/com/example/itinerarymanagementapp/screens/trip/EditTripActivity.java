@@ -50,12 +50,15 @@ public class EditTripActivity extends AppCompatActivity {
     SharedPreferences tripPrefs;
     SharedPreferences.Editor tripPrefsEditor;
     Trip trip;
+    public String userUUID;
 
     @AfterViews
     public void init(){
         realm = Realm.getDefaultInstance();
         tripPrefs = getSharedPreferences("Trip", MODE_PRIVATE);
         tripPrefsEditor = tripPrefs.edit();
+        SharedPreferences userStore = getSharedPreferences("User", MODE_PRIVATE);
+        userUUID = userStore.getString("UUID", null);
         String tripUUID = tripPrefs.getString("tripUUID", null);
 
         trip = realm.where(Trip.class).equalTo("uuid", tripUUID).findFirst();
@@ -69,10 +72,10 @@ public class EditTripActivity extends AppCompatActivity {
     @Click
     public void saveTripEditBtn(){
         String tripName = editTripNameInput.getText().toString();
-        String tripCategoryInput = editTripCategoryInput.getText().toString();
+        String tripCategoryInput = editTripCategoryInput.getText().toString().toLowerCase();
         String tripDescription = editTripDescriptionInput.getText().toString();
         RealmResults<Trip> tripNamesData = realm.where(Trip.class)
-                .equalTo("tripName", tripName).findAll();
+                .contains("tripName", tripName).contains("userUUID", userUUID).findAll();
         if(tripName.equals("")){
             editTripNameInput.setText(trip.getTripName());
             blankInputToast("Name");
@@ -94,7 +97,7 @@ public class EditTripActivity extends AppCompatActivity {
             if (trip1 == null){
                 String uuid = UUID.randomUUID().toString();
                 tripCategory newCategory = new tripCategory();
-                newCategory.setName(tripCategoryInput.toLowerCase());
+                newCategory.setName(tripCategoryInput);
                 newCategory.setUuid(uuid);
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(newCategory);

@@ -305,13 +305,16 @@ public class EditEventActivity extends AppCompatActivity {
         }
 
         String sname = event.getEventName();
-        //Event Entity Validation
-        RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
-                eventName).findAll();
 
         SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
+        SharedPreferences store2 = getSharedPreferences("User", MODE_PRIVATE);
+        String userUUID = store2.getString("UUID", null);
         String tripUUID = store.getString("tripUUID", "");
         Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
+
+        //Event Entity Validation
+        RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
+                eventName).equalTo("tripUUID", trip.getUuid()).equalTo("userUUID", userUUID).findAll();
 
         // Checks if Name is not edited OR Name is new
         if (results.isEmpty()){
@@ -332,7 +335,7 @@ public class EditEventActivity extends AppCompatActivity {
         realm.beginTransaction();
         event.setEventName( eventValues.get("name") );
         event.setEventDescription( eventValues.get("description") );
-        event.setTripNameReference( trip.getTripName() );
+        event.setTripUUID(trip.getUuid());
         event.setCategory( eventValues.get("category").toLowerCase() );
         event.setTimeRange( eventValues.get("date") + "|||" + eventValues.get("time"));
         realm.copyToRealmOrUpdate(event);

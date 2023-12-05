@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -50,6 +51,7 @@ public class EventListActivity extends AppCompatActivity {
     Spinner filterCategory;
 
     public static String referenceUUID;
+    public static String userUUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class EventListActivity extends AppCompatActivity {
         newEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 CreateEventActivity_.intent(EventListActivity.this).start();
             }
         });
@@ -84,11 +87,11 @@ public class EventListActivity extends AppCompatActivity {
                 Trip trip = realm.where(Trip.class).contains("uuid", referenceUUID).findFirst();
 
                 if (!queriedCategory.equals("All Categories")){
-                    RealmResults<Event> queriedEvents = realm.where(Event.class).contains("tripNameReference", trip.getTripName()).contains("category", queriedCategory).findAll();
+                    RealmResults<Event> queriedEvents = realm.where(Event.class).contains("tripUUID", trip.getUuid()).contains("category", queriedCategory).contains("userUUID", userUUID).findAll();
                     EventAdapter eventAdapter = new EventAdapter(EventListActivity.this, queriedEvents, true);
                     recyclerView.setAdapter(eventAdapter);
                 } else {
-                    RealmResults<Event> queriedEvents = realm.where(Event.class).contains("tripNameReference", trip.getTripName()).findAll();
+                    RealmResults<Event> queriedEvents = realm.where(Event.class).contains("tripUUID", trip.getUuid()).contains("userUUID", userUUID).contains("userUUID", userUUID).findAll();
                     EventAdapter eventAdapter = new EventAdapter(EventListActivity.this, queriedEvents, true);
                     recyclerView.setAdapter(eventAdapter);
                 }
@@ -130,12 +133,18 @@ public class EventListActivity extends AppCompatActivity {
         filterCategory.setAdapter(list);
 
         SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
-        String tripUUID = store.getString("tripUUID", "");
-        referenceUUID = tripUUID;
-        Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
+        SharedPreferences store2 = getSharedPreferences("User", MODE_PRIVATE);
 
-        RealmResults<Event> events = realm.where(Event.class).contains("tripNameReference", trip.getTripName()).findAll();
+        referenceUUID = store.getString("tripUUID", "");
+        userUUID = store2.getString("UUID", null);
 
+        Trip trip = realm.where(Trip.class).contains("uuid", referenceUUID).contains("userUUID", userUUID).findFirst();
+
+        RealmResults<Event> events = realm.where(Event.class).contains("tripUUID", trip.getUuid()).contains("userUUID", userUUID).findAll();
+
+        for (Event i : events){
+            Log.d("GaelLogs", i.getEventName() + " " + i.getTimeRange());
+        }
         EventAdapter eventAdapter = new EventAdapter(this, events, true);
         recyclerView.setAdapter(eventAdapter);
     }

@@ -9,7 +9,7 @@ public class Event extends RealmObject {
 
     private String category;
 
-    private String tripNameReference;
+    private String tripUUID;
 
     private String eventName;
 
@@ -17,7 +17,17 @@ public class Event extends RealmObject {
 
     private String timeRange;
 
+    private String userUUID;
+
     public Event(){}
+
+    public String getUserUUID() {
+        return userUUID;
+    }
+
+    public void setUserUUID(String userUUID) {
+        this.userUUID = userUUID;
+    }
     public String getUuid() {
         return uuid;
     }
@@ -34,12 +44,12 @@ public class Event extends RealmObject {
         this.category = category;
     }
 
-    public String getTripNameReference() {
-        return tripNameReference;
+    public String getTripUUID() {
+        return tripUUID;
     }
 
-    public void setTripNameReference(String tripNameReference) {
-        this.tripNameReference = tripNameReference;
+    public void setTripUUID(String tripUUID) {
+        this.tripUUID = tripUUID;
     }
 
     public String getEventName() {

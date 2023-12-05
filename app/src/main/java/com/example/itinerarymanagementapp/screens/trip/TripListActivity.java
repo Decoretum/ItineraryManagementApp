@@ -61,6 +61,7 @@ public class TripListActivity extends AppCompatActivity {
     SharedPreferences.Editor tripPrefsEditor;
 
     String UUID;
+    public String userUUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,15 +77,15 @@ public class TripListActivity extends AppCompatActivity {
                     return;
                 }
 
-                String queriedCategory = filterCategory.getSelectedItem().toString();
+                String queriedCategory = filterCategory.getSelectedItem().toString().trim();
 
                 if (!queriedCategory.equals("All Categories")){
-                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).equalTo("category", queriedCategory).findAll();
+                    Log.d("GaelLogs", queriedCategory);
+                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).contains("category", queriedCategory).contains("userUUID", userUUID).findAll();
                     TripAdapter tripAdapter = new TripAdapter(TripListActivity.this, queriedTrips, true);
                     tripRecyclerView.setAdapter(tripAdapter);
                 } else {
-//                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).contains("category", queriedCategory).findAll();
-                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).equalTo("userUUID", UUID).findAll();
+                    RealmResults<Trip> queriedTrips = realm.where(Trip.class).contains("userUUID", userUUID).findAll();
                     TripAdapter tripAdapter = new TripAdapter(TripListActivity.this, queriedTrips, true);
                     tripRecyclerView.setAdapter(tripAdapter);
                 }
@@ -101,12 +102,15 @@ public class TripListActivity extends AppCompatActivity {
         tripRecyclerView.setLayoutManager(mLayoutManager);
 
         //Spinner
+        SharedPreferences store = getSharedPreferences("User", MODE_PRIVATE);
+        userUUID = store.getString("UUID", null);
         RealmResults<tripCategory> tripCategories = realm.where(tripCategory.class).findAll();
         ArrayList<String> categories = new ArrayList<>();
+        categories.add("All Categories");
         for (tripCategory i : tripCategories){
+            Log.d("GaelLogs", i.getName());
             categories.add(i.getName());
         }
-        categories.add("All Categories");
 
         ArrayAdapter list = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
 

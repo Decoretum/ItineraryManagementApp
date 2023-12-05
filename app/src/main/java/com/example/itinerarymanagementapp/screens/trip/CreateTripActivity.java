@@ -15,6 +15,7 @@ import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Trip;
 import com.example.itinerarymanagementapp.models.eventCategory;
 import com.example.itinerarymanagementapp.models.tripCategory;
+import com.example.itinerarymanagementapp.screens.event.EventListActivity_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -61,12 +62,18 @@ public class CreateTripActivity extends AppCompatActivity {
     }
 
     @Click
+    public void tripRegisterCancelBtn(){
+        finish();
+        EventListActivity_.intent(this).start();
+    }
+
+    @Click
     public void tripSaveBtn(){
         String tripNameInput = tripNameRegisterInput.getText().toString();
         String tripCategoryInput = tripCategoryRegisterInput.getText().toString();
         String tripDescriptionInput = tripDescriptionRegisterInput.getText().toString();
         RealmResults<Trip> tripNameData = realm.where(Trip.class)
-                .equalTo("tripName", tripNameInput).findAll();
+                .contains("tripName", tripNameInput).contains("userUUID", userUUID).findAll();
 
         if(tripNameInput.equals("")) {
             blankInputToast("Name");
@@ -87,7 +94,7 @@ public class CreateTripActivity extends AppCompatActivity {
             trip.setUuid(UUID.randomUUID().toString());
             trip.setUserUUID(userUUID);
             trip.setTripName(tripNameInput);
-            trip.setCategory(tripCategoryInput);
+            trip.setCategory(tripCategoryInput.toLowerCase());
             trip.setDescription(tripDescriptionInput);
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(trip);

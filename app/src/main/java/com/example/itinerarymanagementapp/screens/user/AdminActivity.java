@@ -2,12 +2,16 @@ package com.example.itinerarymanagementapp.screens.user;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.itinerarymanagementapp.R;
+import com.example.itinerarymanagementapp.models.Event;
+import com.example.itinerarymanagementapp.models.Trip;
 import com.example.itinerarymanagementapp.models.User;
 
 import org.androidannotations.annotations.AfterViews;
@@ -23,6 +27,9 @@ public class AdminActivity extends AppCompatActivity {
 
     @ViewById
     RecyclerView userRecycler;
+
+    @ViewById
+    Button adminBackButton;
 
 
     @Click
@@ -59,8 +66,12 @@ public class AdminActivity extends AppCompatActivity {
     {
         if(user.isValid())    // need to check if previously deleted
         {
+            RealmResults<Event> events = realm.where(Event.class).contains("userUUID", user.getUuid()).findAll();
+            RealmResults<Trip> trips = realm.where(Trip.class).contains("userUUID", user.getUuid()).findAll();
             realm.beginTransaction();
             user.deleteFromRealm();
+            events.deleteAllFromRealm();
+            trips.deleteAllFromRealm();
             realm.commitTransaction();
         }
     }
@@ -82,6 +93,14 @@ public class AdminActivity extends AppCompatActivity {
         // what's inside (Realm) list gets displayed
         UserAdapter adapter = new UserAdapter(this, list, true);
         userRecycler.setAdapter(adapter);
+
+        adminBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                LoginActivity_.intent(AdminActivity.this).start();
+            }
+        });
     }
 
 

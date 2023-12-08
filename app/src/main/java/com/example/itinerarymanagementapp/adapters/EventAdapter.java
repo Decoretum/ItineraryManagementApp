@@ -1,5 +1,7 @@
 package com.example.itinerarymanagementapp.adapters;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Event;
+import com.example.itinerarymanagementapp.models.Trip;
 import com.example.itinerarymanagementapp.screens.event.EventListActivity;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
@@ -60,9 +63,16 @@ public class EventAdapter extends RealmRecyclerViewAdapter<Event, EventAdapter.V
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position){
             Event event = getItem(position);
 
+            //Get User and Trip
+            SharedPreferences store = eventListActivity.getSharedPreferences("User", Context.MODE_PRIVATE);
+            String userName = store.getString("userName", "");
+
+            SharedPreferences tripStore = eventListActivity.getSharedPreferences("Trip", Context.MODE_PRIVATE);
+            String tripName = tripStore.getString("tripName", tripStore.getString("tripName", ""));
+
             //Get Image File
             File imageDir = eventListActivity.getExternalCacheDir();
-            File eventFile = new File(imageDir, event.getEventName() + ".jpeg");
+            File eventFile = new File(imageDir, event.getUuid() + ".jpeg");
             Picasso.get()
                     .load(eventFile)
                     .placeholder(android.R.drawable.ic_menu_my_calendar)

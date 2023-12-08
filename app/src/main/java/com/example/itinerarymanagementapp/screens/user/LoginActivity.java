@@ -63,10 +63,9 @@ public class LoginActivity extends AppCompatActivity {
                 SharedPreferences uprefs = getSharedPreferences("User", MODE_PRIVATE);
                 SharedPreferences.Editor edit = uprefs.edit();
 
-
-
                 edit.putString("uuid", userSaved.getUuid());
                 edit.putBoolean("remember", rememberMe.isChecked());
+                edit.putString("userName", userSaved.getUsername());
                 edit.apply();
 
                 /* go to Trips screen */

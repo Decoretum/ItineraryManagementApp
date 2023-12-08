@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
             {
                 if (pword1.equals(pword2)) // passwords match
                 {
-                    if (fname.isEmpty() || lname.isEmpty() || bday.isEmpty())
+                    if (fname.isEmpty() || lname.isEmpty() || bday.isEmpty() || pword1.isEmpty() || pword2.isEmpty())
                     {
                         Toast.makeText(this, "Fields cannot be blank", Toast.LENGTH_LONG).show();
                     }

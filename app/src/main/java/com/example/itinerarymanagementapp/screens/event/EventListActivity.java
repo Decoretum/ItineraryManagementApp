@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.itinerarymanagementapp.R;
 
@@ -37,6 +38,9 @@ public class EventListActivity extends AppCompatActivity {
     Realm realm;
     @ViewById
     RecyclerView recyclerView;
+
+    @ViewById
+    TextView eventTitle;
 
     @ViewById
     Button newEventButton;
@@ -137,14 +141,15 @@ public class EventListActivity extends AppCompatActivity {
 
         referenceUUID = store.getString("tripUUID", "");
         userUUID = store2.getString("UUID", null);
+        String userName = store2.getString("userName", "");
 
         Trip trip = realm.where(Trip.class).contains("uuid", referenceUUID).contains("userUUID", userUUID).findFirst();
 
         RealmResults<Event> events = realm.where(Event.class).contains("tripUUID", trip.getUuid()).contains("userUUID", userUUID).findAll();
 
-        for (Event i : events){
-            Log.d("GaelLogs", i.getEventName() + " " + i.getTimeRange());
-        }
+        //Setting the title
+        eventTitle.setText("Events - " + userName);
+
         EventAdapter eventAdapter = new EventAdapter(this, events, true);
         recyclerView.setAdapter(eventAdapter);
     }

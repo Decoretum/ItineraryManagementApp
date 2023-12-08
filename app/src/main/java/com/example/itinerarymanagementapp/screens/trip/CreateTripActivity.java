@@ -64,13 +64,13 @@ public class CreateTripActivity extends AppCompatActivity {
     @Click
     public void tripRegisterCancelBtn(){
         finish();
-        EventListActivity_.intent(this).start();
+        TripListActivity_.intent(this).start();
     }
 
     @Click
     public void tripSaveBtn(){
         String tripNameInput = tripNameRegisterInput.getText().toString();
-        String tripCategoryInput = tripCategoryRegisterInput.getText().toString();
+        String tripCategoryInput = tripCategoryRegisterInput.getText().toString().toLowerCase();
         String tripDescriptionInput = tripDescriptionRegisterInput.getText().toString();
         RealmResults<Trip> tripNameData = realm.where(Trip.class)
                 .contains("tripName", tripNameInput).contains("userUUID", userUUID).findAll();

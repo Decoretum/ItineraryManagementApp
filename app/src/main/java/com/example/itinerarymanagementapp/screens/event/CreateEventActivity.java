@@ -19,6 +19,7 @@ import com.example.itinerarymanagementapp.ImageActivity_;
 import com.example.itinerarymanagementapp.R;
 import com.example.itinerarymanagementapp.models.Event;
 import com.example.itinerarymanagementapp.models.Trip;
+import com.example.itinerarymanagementapp.models.User;
 import com.example.itinerarymanagementapp.models.eventCategory;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -216,7 +217,7 @@ public class CreateEventActivity extends AppCompatActivity {
         String eventDescription = editEventDescription.getText().toString().trim();
         String eventTime = editTextTime.getText().toString().trim();
         String eventDate = editTextDate.getText().toString().trim();
-        String eventCategory = editEventCategory.getText().toString().trim();
+        String eventCategory = editEventCategory.getText().toString().toLowerCase().trim();
 
         if (eventName.equals("")){
             Toast.makeText(this, "Event name cannot be blank", Toast.LENGTH_SHORT).show();
@@ -255,11 +256,9 @@ public class CreateEventActivity extends AppCompatActivity {
         String userUUID = store2.getString("UUID", null);
         String tripUUID = store.getString("tripUUID", "");
 
-        Trip trip = realm.where(Trip.class).equalTo("uuid", tripUUID).equalTo("userUUID", userUUID).findFirst();
-
         //Event Entity Validation
         RealmResults<Event> results = realm.where(Event.class).contains("eventName",
-                eventName).contains("tripUUID", trip.getUuid()).contains("userUUID", userUUID).findAll();
+                eventName).contains("tripUUID", tripUUID).contains("userUUID", userUUID).findAll();
 
         if (results.isEmpty()){
             //Create the Event entity
@@ -268,7 +267,7 @@ public class CreateEventActivity extends AppCompatActivity {
             newEvent.setUserUUID(userUUID);
             newEvent.setEventName(eventName);
             newEvent.setEventDescription(eventDescription);
-            newEvent.setTripUUID(trip.getUuid());
+            newEvent.setTripUUID(tripUUID);
             newEvent.setUuid(eventUUID);
             newEvent.setCategory(eventCategory.toLowerCase());
             newEvent.setTimeRange(eventDate + "|||" + eventTime);
@@ -276,10 +275,9 @@ public class CreateEventActivity extends AppCompatActivity {
             //Re-configure the Image File
             if (ImageFile != null){
                 File imgDir = getExternalCacheDir();
-                File renamedFile = new File(imgDir, eventName + ".jpeg");
+                File renamedFile = new File(imgDir, eventUUID + ".jpeg");
                 ImageFile.renameTo(renamedFile);
             }
-
 
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(newEvent);

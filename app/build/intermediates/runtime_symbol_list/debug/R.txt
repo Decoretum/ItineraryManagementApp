@@ -3327,6 +3327,7 @@ int id endToStart 0x7f0a00ea
 int id enterAlways 0x7f0a00eb
 int id enterAlwaysCollapsed 0x7f0a00ec
 int id eventName 0x7f0a00ed
+int id eventTitle 0x7f0a026f
 int id exitUntilCollapsed 0x7f0a00ee
 int id expand_activities_button 0x7f0a00ef
 int id expanded_menu 0x7f0a00f0
@@ -3624,7 +3625,6 @@ int id textSpacerNoButtons 0x7f0a0213
 int id textSpacerNoTitle 0x7f0a0214
 int id textStart 0x7f0a0215
 int id textTop 0x7f0a0216
-int id textView 0x7f0a0217
 int id textView11 0x7f0a0218
 int id textView12 0x7f0a0219
 int id textView13 0x7f0a021a

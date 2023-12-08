@@ -69,6 +69,7 @@ id editTripNameTitle
 id editTripTitle
 id editUserButton
 id eventName
+id eventTitle
 id filterCategory
 id firstName
 id imageButton
@@ -95,7 +96,6 @@ id saveRegister
 id saveTripEditBtn
 id saveUserEdit
 id signIn
-id textView
 id textView11
 id textView12
 id textView13

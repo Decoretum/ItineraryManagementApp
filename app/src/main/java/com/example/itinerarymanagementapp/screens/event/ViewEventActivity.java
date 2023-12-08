@@ -2,6 +2,7 @@ package com.example.itinerarymanagementapp.screens.event;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,10 +53,16 @@ public class ViewEventActivity extends AppCompatActivity {
     @ViewById
     Button viewEventBackButton;
 
+    public static String userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_event);
+
+        //User name and Trip name
+        SharedPreferences store = getSharedPreferences("User", MODE_PRIVATE);
+        userName = store.getString("userName", "");
 
         realm = Realm.getDefaultInstance();
         Event event = realm.where(Event.class).contains("uuid", uuid).findFirst();
@@ -85,12 +92,10 @@ public class ViewEventActivity extends AppCompatActivity {
             }
         });
 
+        //Setting the Image
         File imgDir = getExternalCacheDir();
-        File eventFile = new File(imgDir, event.getEventName() + ".jpeg");
+        File eventFile = new File(imgDir, event.getUuid() + ".jpeg");
 
-//        if (!eventFile.isFile()){
-//            imageView2.setImageResource(android.R.drawable.ic_menu_my_calendar);
-//        }
         Log.d("GaelLogs", eventFile.getPath());
         Picasso.get()
                 .load(eventFile)

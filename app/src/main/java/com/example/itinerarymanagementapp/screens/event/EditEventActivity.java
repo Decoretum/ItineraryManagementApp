@@ -76,12 +76,25 @@ public class EditEventActivity extends AppCompatActivity {
     public static File loadedFile;
     public static int REQUEST_CODE_IMAGE_SCREEN = 0;
     public static Event event;
+    public static Boolean imageChanged;
+
+    public static String userName;
+    public static Trip trip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_event);
         realm = Realm.getDefaultInstance();
+
+        imageChanged = false;
+
+        //Fetching the trip and User
+        SharedPreferences store = getSharedPreferences("User", MODE_PRIVATE);
+        userName = store.getString("userName", "");
+
+        SharedPreferences tripStore = getSharedPreferences("Trip", MODE_PRIVATE);
+        trip = realm.where(Trip.class).equalTo("uuid", tripStore.getString("tripUUID", "")).findFirst();
 
         event = realm.where(Event.class).contains("uuid", uuid).findFirst();
         editEventName2.setText(event.getEventName());
@@ -115,7 +128,7 @@ public class EditEventActivity extends AppCompatActivity {
 
         //Loading Existing Event Image
         File dir = getExternalCacheDir();
-        File loadImage = new File(dir, event.getEventName() + ".jpeg");
+        File loadImage = new File(dir, event.getUuid() + ".jpeg");
         Picasso.get()
                 .load(loadImage)
                 .error(android.R.drawable.ic_menu_my_calendar)
@@ -211,11 +224,13 @@ public class EditEventActivity extends AppCompatActivity {
                 byte[] jpeg = data.getByteArrayExtra("rawJpeg");
 
                 try {
+                    Log.d("GaelLogs", "CHANGED IMAGE FILE");
                     // save rawImage to file
                     ArrayList<Object> rawData = saveFile(jpeg);
 
                     // load file to the image view via picasso
                     refreshImageView((File) rawData.get(0));
+                    imageChanged = true;
 
                     // Declare variable in global scope
                     ImageFile = (File) rawData.get(0);
@@ -265,7 +280,7 @@ public class EditEventActivity extends AppCompatActivity {
         String eventDescription = editEventDescription2.getText().toString().trim();
         String eventTime = editTextTime2.getText().toString().trim();
         String eventDate = editTextDate2.getText().toString().trim();
-        String eventCategory = editEventCategory2.getText().toString().trim();
+        String eventCategory = editEventCategory2.getText().toString().toLowerCase().trim();
 
         HashMap<String, String> eventValues = new HashMap<>();
         eventValues.put("name", eventName);
@@ -273,7 +288,6 @@ public class EditEventActivity extends AppCompatActivity {
         eventValues.put("time", eventTime);
         eventValues.put("date", eventDate);
         eventValues.put("category", eventCategory);
-
 
         if (eventName.equals("")){
             Toast.makeText(this, "Event name cannot be blank", Toast.LENGTH_SHORT).show();
@@ -306,11 +320,8 @@ public class EditEventActivity extends AppCompatActivity {
 
         String sname = event.getEventName();
 
-        SharedPreferences store = getSharedPreferences("Trip", MODE_PRIVATE);
         SharedPreferences store2 = getSharedPreferences("User", MODE_PRIVATE);
         String userUUID = store2.getString("UUID", null);
-        String tripUUID = store.getString("tripUUID", "");
-        Trip trip = realm.where(Trip.class).contains("uuid", tripUUID).findFirst();
 
         //Event Entity Validation
         RealmResults<Event> results = realm.where(Event.class).equalTo("eventName",
@@ -340,17 +351,22 @@ public class EditEventActivity extends AppCompatActivity {
         event.setTimeRange( eventValues.get("date") + "|||" + eventValues.get("time"));
         realm.copyToRealmOrUpdate(event);
         realm.commitTransaction();
-        //Re-configure the Image File
 
+        //Re-configure the Image File
         File imgDir = getExternalCacheDir();
-        File renamedFile = new File(imgDir, eventValues.get("name") + ".jpeg");
-        if (ImageFile == null){
+        File renamedFile = new File(imgDir, event.getUuid() + ".jpeg");
+
+        //Log.d("GaelLogs", "LOADED: " + loadedFile.getPath());
+        //Log.d("GaelLogs", "NEW FILE: " + ImageFile.getPath());
+        if (imageChanged == false){
             //If no new image, but event information changed
             loadedFile.renameTo(renamedFile);
+            Log.d("GaelLogs", "NO CHANGE IN IMAGE");
         } else {
             //If there is a new image with information change or not
             loadedFile.delete();
             ImageFile.renameTo(renamedFile);
+            Log.d("GaelLogs", "CHANGE IN IMAGE");
         }
 
         realm.beginTransaction();

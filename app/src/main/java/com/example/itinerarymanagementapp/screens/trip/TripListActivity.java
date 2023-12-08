@@ -23,6 +23,7 @@ import com.example.itinerarymanagementapp.models.eventCategory;
 import com.example.itinerarymanagementapp.models.tripCategory;
 import com.example.itinerarymanagementapp.screens.MainActivity_;
 import com.example.itinerarymanagementapp.screens.event.EventListActivity;
+import com.example.itinerarymanagementapp.screens.user.LoginActivity_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -127,10 +128,12 @@ public class TripListActivity extends AppCompatActivity {
         list.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filterCategory.setAdapter(list);
 
-        userPrefs = getSharedPreferences("User", MODE_PRIVATE);
-        userPrefsEditor = userPrefs.edit();
+        //Setting title
+        tripTitle.setText("Trips - " + store.getString("userName", ""));
 
-        UUID = userPrefs.getString("UUID", null);
+        userPrefsEditor = store.edit();
+
+        UUID = store.getString("UUID", null);
 
         RealmResults<Trip> calledUUID = realm.where(Trip.class).equalTo("userUUID", UUID).findAll();
         TripAdapter tAdapter = new TripAdapter(this, calledUUID, true);
@@ -144,8 +147,10 @@ public class TripListActivity extends AppCompatActivity {
         tripPrefs = getSharedPreferences("Trip", MODE_PRIVATE);
         tripPrefsEditor = tripPrefs.edit();
         String tripUUID = t.getUuid();
+        String tripName = t.getTripName();
         Log.d("LOGGING", "viewTrip: "+ tripUUID);
         tripPrefsEditor.putString("tripUUID", tripUUID);
+        tripPrefsEditor.putString("tripName", tripName);
         tripPrefsEditor.apply();
         startActivity(intent);
         finish();
@@ -170,9 +175,9 @@ public class TripListActivity extends AppCompatActivity {
 
     @Click
     public void tripListBackBtn(){
-        Intent intent = new Intent(this, MainActivity_.class);
-        startActivity(intent);
         finish();
+        Intent intent = new Intent(this, LoginActivity_.class);
+        startActivity(intent);
     }
 
     public void onDestroy()

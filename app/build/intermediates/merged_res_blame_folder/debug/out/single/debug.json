@@ -12,8 +12,8 @@
         "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_event_row_layout.xml.flat",
-        "source": "com.example.itinerarymanagementapp-main-35:/layout/event_row_layout.xml"
+        "merged": "com.example.itinerarymanagementapp-merged_res-33:/layout_activity_main.xml.flat",
+        "source": "com.example.itinerarymanagementapp-main-35:/layout/activity_main.xml"
     },
     {
         "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/mipmap-xxhdpi_new_icon.webp.flat",
@@ -76,12 +76,12 @@
         "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/layout_activity_create_trip.xml.flat",
-        "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/layout/activity_create_trip.xml"
-    },
-    {
         "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/layout_activity_create_trip.xml.flat",
+        "source": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-main-35:/layout/activity_create_trip.xml"
     },
     {
         "merged": "/Users/Gamadan/.gradle/daemon/8.0/com.example.itinerarymanagementapp-merged_res-33:/layout_activity_view_event.xml.flat",

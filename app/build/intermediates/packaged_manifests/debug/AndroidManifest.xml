@@ -8,6 +8,16 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="33" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <permission
         android:name="com.example.itinerarymanagementapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -22,11 +32,58 @@
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/new_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/new_icon_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.ItineraryManagementApp" >
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.user.AdminActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.user.EditUserActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.user.RegisterActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.user.LoginActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.MainActivity_"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.ViewTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.EditTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.CreateTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.trip.TripListActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.EditEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.ViewEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.CreateEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name="com.example.itinerarymanagementapp.screens.event.EventListActivity_"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="@string/fileAuthority"
@@ -38,6 +95,11 @@
         </provider>
 
         <activity android:name="com.example.itinerarymanagementapp.ImageActivity_" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name="com.karumi.dexter.DexterActivity"
             android:theme="@style/Dexter.Internal.Theme.Transparent" />

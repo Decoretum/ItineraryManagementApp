@@ -1,14 +1,15 @@
 package com.example.itinerarymanagementapp.models;
 
+import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class Event {
+public class Event extends RealmObject {
     @PrimaryKey
     private String uuid;
 
     private String category;
 
-    private String tripNameReference;
+    private String tripUUID;
 
     private String eventName;
 
@@ -16,7 +17,17 @@ public class Event {
 
     private String timeRange;
 
+    private String userUUID;
+
     public Event(){}
+
+    public String getUserUUID() {
+        return userUUID;
+    }
+
+    public void setUserUUID(String userUUID) {
+        this.userUUID = userUUID;
+    }
     public String getUuid() {
         return uuid;
     }
@@ -33,12 +44,12 @@ public class Event {
         this.category = category;
     }
 
-    public String getTripNameReference() {
-        return tripNameReference;
+    public String getTripUUID() {
+        return tripUUID;
     }
 
-    public void setTripNameReference(String tripNameReference) {
-        this.tripNameReference = tripNameReference;
+    public void setTripUUID(String tripUUID) {
+        this.tripUUID = tripUUID;
     }
 
     public String getEventName() {

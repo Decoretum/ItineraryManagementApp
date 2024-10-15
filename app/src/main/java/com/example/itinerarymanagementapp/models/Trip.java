@@ -1,8 +1,9 @@
 package com.example.itinerarymanagementapp.models;
 
+import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class Trip {
+public class Trip extends RealmObject {
 
     public Trip() {
     }

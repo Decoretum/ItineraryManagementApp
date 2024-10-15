@@ -2,28 +2,71 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:name=".RealmApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/new_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/new_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ItineraryManagementApp"
         tools:targetApi="31">
         <activity
-            android:name=".screens.event.EditEventActivity"
+            android:name=".screens.user.AdminActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.ViewEventActivity"
+            android:name=".screens.user.EditUserActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.CreateEventActivity"
+            android:name=".screens.user.RegisterActivity_"
             android:exported="false" />
         <activity
-            android:name=".screens.event.EventListActivity"
+            android:name=".screens.user.LoginActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.MainActivity_"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screens.trip.ViewTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.trip.EditTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.trip.CreateTripActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.trip.TripListActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.event.EditEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.event.ViewEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.event.CreateEventActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".screens.event.EventListActivity_"
             android:exported="false" />
 
         <provider
@@ -37,6 +80,9 @@
         </provider>
 
         <activity android:name=".ImageActivity_" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

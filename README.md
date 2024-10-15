@@ -1,3 +1,4 @@
+
 # Bluetility Itinerary
 
 Bluetility Itinerary is a mobile application developed by Gael Estrera, Colleen Barrameda, and Erick Lopez in order to manage user itinerary for various trips and events, and this application also features user authentication in order for data to be kept exclusive for various users. This application is the group's final project output for CSCI 181.05, Special Topics in Software Engineering: Android Development. This application was developed using Java with the aid of Android Studio. <br>
@@ -94,4 +95,3 @@ private String name;
 
 
 ```
-

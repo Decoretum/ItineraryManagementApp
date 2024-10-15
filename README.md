@@ -21,7 +21,7 @@ User authentication enabled the application to store trip and event data exclusi
 This same logic also applies to Events. Categories created by User A for Trips and Events will also be independent of the categories formed by User B for User B's trips and events, even if the category names will be identical. 
 
 <h2>Entities/Models</h2>
-This application features 5 main database entities.<br>
+This application features 5 main database entities which are managed through Realm Database.<br><br>
 
 ```
 User Model
